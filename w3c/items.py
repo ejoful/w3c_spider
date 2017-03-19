@@ -22,6 +22,9 @@ class W3CItem(scrapy.Item):
     tutorial_content = scrapy.Field()
     tutorial_position = scrapy.Field()
 
+    tutorial_doc = scrapy.Field()
+
+
     # 教程文章页面
     tutorial_doc_menu_name = scrapy.Field()
     tutorial_doc_menu_position = scrapy.Field()
@@ -32,3 +35,4 @@ class W3CItem(scrapy.Item):
     tutorial_doc_name = scrapy.Field()
     tutorial_doc_is_menu = scrapy.Field()
     tutorial_doc_menu_position = scrapy.Field()
+    tutorial_doc_content = scrapy.Field()
