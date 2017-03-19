@@ -16,18 +16,22 @@ class W3cschoolSpider(scrapy.Spider):
     def parse(self, response):
         w3c_item = W3CItem()
 
-        url_str = start_urls[0][:-1]
-        url_arr = url_str.split('/')
+        # url_str = slef.start_urls[0][:-1]
+        # url_arr = url_str.split('/')
 
-        w3c_item['tutorial_slug'] = url_arr[-1]
-        w3c_item['tutorial_name'] = response.xpath('//div[@class="coverinfo"]/h1/text()')[0].extract()
-        w3c_item['tutorial_description'] = response.xpath('//div[@class="coverinfo-desc"]/p/text()')[0].extract()
+        # w3c_item['slug'] = url_arr[-1]
+        w3c_item['slug'] = 'html'
+        w3c_item['name'] = response.xpath('//div[@class="coverinfo"]/h1/text()')[0].extract()
+        w3c_item['description'] = response.xpath('//div[@class="coverinfo-desc"]/p/text()')[0].extract()
         img_path_str = response.xpath('//img[@class="pimgcover"]/@src')[0].extract()
         img_path_arr = img_path_str.split('?')
-        w3c_item['tutorial_img_path'] = img_path_arr[0]
+        img_arr = img_path_arr[0].split('/')
+        w3c_item['img'] = img_arr[-1]
+
+        w3c_item['img_path'] = img_path_arr[0]
         content_str = response.xpath('//div[@class="project-desc-content"]')[0].extract()
-        w3c_item['tutorial_content'] = content_str[35:-6]
-        w3c_item['tutorial_position'] = 1
+        w3c_item['content'] = content_str[35:-6]
+        w3c_item['position'] = 1
 
         w3c_item['tutorial_doc'] = []
 
@@ -38,14 +42,15 @@ class W3cschoolSpider(scrapy.Spider):
         doc_link_arr = []
         index = 0
         for li_str in li_list[0:]:
-            slug = li_str.xpath('@data-id')
-            link = 'http://www.w3cschool.cn/' + w3c_item['tutorial_slug'] + '/' + slug + '.html'
-            ismenu = li_str.xpath('@ismenu')
+            slug = str(li_str.xpath('@data-id')[0].extract())
+            # slug = slug_arr[0]
+            link = 'http://www.w3cschool.cn/' + str(w3c_item['slug']) + '/' + slug + '.html'
+            ismenu = li_str.xpath('@ismenu')[0].extract()
             index = index + 1
 
             if not ismenu:
                 title = li_str.xpath('div/h2[@class="dd-content "]/a/@title')[0].extract()
-                doc_link_arr.append({'tutorial_id': 1,
+                doc_link_arr.append({'tutorial': w3c_item['slug'],
                                      'ismenu': 0,
                                      'slug': slug,
                                      'name': title,
@@ -56,39 +61,47 @@ class W3cschoolSpider(scrapy.Spider):
                                      'position': index})
             else:
                 title = li_str.xpath('div/h2[@class="menu-title"]/span/@title')[0].extract()
-                doc_link_arr.append({'tutorial_id': 1,
+                doc_link_arr.append({'tutorial': w3c_item['slug'],
                                      'ismenu': 1,
                                      'slug': slug,
                                      'name': title,
-                                     'description': title + '_来自' + w3c_item['tutorial_name'] + ',w3cxyz',
+                                     'description': title + '_来自' + w3c_item['name'] + ',w3cxyz',
                                      'link': link,
                                      'content': '',
                                      'tag': '',
                                      'position': index})
+                # print(doc_link_arr)
                 #组装菜单下面的链接
                 menu_doc_li = li_str.xpath('ol[@class="dd-list"]/li')
                 for doc_li in menu_doc_li[0:]:
                     index = index + 1
-                    doc_slug = doc_li.xpath('@data-id')
+                    doc_slug = doc_li.xpath('@data-id')[0].extract()
                     doc_name = doc_li.xpath('div[@class="dd-content "]/a/@title')[0].extract()
-                    doc_link = ['http://www.w3cschool.cn' + doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract()]
-                    doc_link_arr.append({'tutorial_id': 1,
+                    # doc_link = ''
+                    if index == 42:
+                        doc_link = str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
+                    else:
+                        doc_link = 'http://www.w3cschool.cn' + str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
+                    doc_link_arr.append({'tutorial': w3c_item['slug'],
                                          'ismenu': 0,
                                          'slug': doc_slug,
                                          'name': doc_name,
                                          'description': '',
                                          'link': doc_link,
                                          'content': '',
-                                         'tag': '',
+                                         'tag': title,
                                          'position': index})
-        return self.recursive_parse_video(doc_link_arr, w3c_item)
+                    # print(doc_link_arr)
+                    # exit()
+
+        return self.recursive_parse_doc(doc_link_arr, w3c_item)
 
 
         #         w3c_item['tutorial_doc'].append({'tutorial_id': 1,
         #                                          'ismenu': ismenu,
         #                                          'slug': slug,
         #                                          'name': title,
-        #                                          'description': title + '_来自' + w3c_item['tutorial_name'] + ',w3cxyz',
+        #                                          'description': title + '_来自' + w3c_item['name'] + ',w3cxyz',
         #                                          'content': '',
         #                                          'tag': '',
         #                                          'position': index})
@@ -108,7 +121,7 @@ class W3cschoolSpider(scrapy.Spider):
         #                                          'ismenu':ismenu,
         #                                          'slug':slug,
         #                                          'name':title,
-        #                                          'description':title+'_来自'+w3c_item['tutorial_name']+',w3cxyz',
+        #                                          'description':title+'_来自'+w3c_item['name']+',w3cxyz',
         #                                          'content':'',
         #                                          'tag':'',
         #                                          'position':index})
@@ -126,36 +139,27 @@ class W3cschoolSpider(scrapy.Spider):
             yield w3c_item
         else:
             les = tbd.pop()
-            title = les.xpath('a/span/text()')[0].extract()
-            link = ["http://www.maiziedu.com" + les.xpath('a/@href')[0].extract()][0]
-
+            link = les['link']
+            # print(les)
+            # exit()
             yield scrapy.Request(url=link,
-                                 meta={'tbd': tbd, 'w3c_item': w3c_item, 'title': title, 'link': link},
+                                 meta={'tbd': tbd, 'w3c_item': w3c_item, 'les': les},
                                  callback=self.parse_doc,
                                  dont_filter=True)
 
     def parse_doc(self, response):
         w3c_item = response.meta['w3c_item']
-        doc_slug = response.meta['doc_slug']
-        doc_name = response.meta['doc_name']
-        index = response.meta['index']
-        tag = response.meta['tag']
-
-        doc_description = response.xpath('/html/head/meta[@name="description"]/@content')[0].extract()
-        doc_content = response.xpath('/html/head/meta[@name="description"]/@content')[0].extract()
-        doc_content_str = response.xpath('//div[@class="content-intro view-box"]')[0].extract()
-        doc_content = doc_content_str[36:-6]
-
-        w3c_item['tutorial_doc'].append({'tutorial_id': 1,
-                                         'ismenu': 0,
-                                         'slug': doc_slug,
-                                         'name': doc_name,
-                                         'description': doc_description,
-                                         'content': doc_content,
-                                         'tag': tag,
-                                         'position': index})
-        course_item['lessons'].append(
-            {'video_id': video_id, 'title': title, 'link': link, 'video_link': video_link})
+        les = response.meta['les']
         tbd = response.meta['tbd']
-        return self.recursive_parse_video(tbd, course_item)
+
+        if les['ismenu'] == 1:
+            w3c_item['tutorial_doc'].append(les)
+        else:
+            les['description'] = response.xpath('/html/head/meta[@name="description"]/@content')[0].extract()
+            content_str = response.xpath('//div[@class="content-intro view-box"]')[0].extract()
+            les['content'] = content_str[36:-6]
+            w3c_item['tutorial_doc'].append(les)
+
+
+        return self.recursive_parse_doc(tbd, w3c_item)
 

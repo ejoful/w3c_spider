@@ -15,12 +15,13 @@ class W3CItem(scrapy.Item):
     tutorial_category_position = scrapy.Field()
 
     #教程介绍页面
-    tutorial_slug = scrapy.Field()
-    tutorial_name = scrapy.Field()
-    tutorial_description = scrapy.Field()
-    tutorial_img_path = scrapy.Field()
-    tutorial_content = scrapy.Field()
-    tutorial_position = scrapy.Field()
+    slug = scrapy.Field()
+    name = scrapy.Field()
+    description = scrapy.Field()
+    img = scrapy.Field()
+    img_path = scrapy.Field()
+    content = scrapy.Field()
+    position = scrapy.Field()
 
     tutorial_doc = scrapy.Field()
 
