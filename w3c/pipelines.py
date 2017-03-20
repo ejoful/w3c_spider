@@ -7,6 +7,7 @@
 
 from scrapy import log
 from twisted.enterprise import adbapi
+import MySQLdb
 import MySQLdb.cursors
 
 class W3CPipeline(object):
@@ -23,7 +24,7 @@ class MysqlPipeline(object):
             db='w3c',
             host='127.0.0.1',
             user='root',
-            passwd='moon',
+            passwd='',
             cursorclass=MySQLdb.cursors.DictCursor,
             charset='utf8',
             use_unicode=True)
@@ -51,16 +52,19 @@ class MysqlPipeline(object):
             lis = (1,item['slug'], item['name'], item['description'], item['img'], item['img_path'], item['content'], item['position'])
             # print(lis)
             result = tx.execute(sql,lis)
-            if result:
-                log.msg("Item already stored in db: %s" % item, level=log.DEBUG)
-            else:
+            # if result:
+            #     log.msg("Item already stored in db: %s" % item, level=log.DEBUG)
+            # else:
 
+            print(item['tutorial_doc'])
+            print('/n/n/n')
             for le in item['tutorial_doc']:
-                sql = """INSERT INTO `tbl_video` (`tutorial`, `is_menu`, `slug`, `name`, `description`, `link`, `content`, `tag`, `position`)
-                                             VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-                # print(le)
-                # print('/n/n/n')
-                tx.execute(sql, le)
+                sql = """INSERT INTO `w3c_tutorial_doc` (`tutorial`, `is_menu`, `slug`, `name`, `description`,  `content`, `tag`, `position`)
+                                             VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"""
+                print(le)
+                print('/n/n/n')
+                params = ( le['tutorial'], le['is_menu'], le['slug'], le['name'], le['description'], le['content'], le['tag'], le['position'])
+                tx.execute(sql, params)
 
 
 

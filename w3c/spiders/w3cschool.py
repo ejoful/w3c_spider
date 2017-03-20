@@ -45,13 +45,13 @@ class W3cschoolSpider(scrapy.Spider):
             slug = str(li_str.xpath('@data-id')[0].extract())
             # slug = slug_arr[0]
             link = 'http://www.w3cschool.cn/' + str(w3c_item['slug']) + '/' + slug + '.html'
-            ismenu = li_str.xpath('@ismenu')[0].extract()
+            is_menu = li_str.xpath('@ismenu')[0].extract()
             index = index + 1
 
-            if not ismenu:
+            if not is_menu:
                 title = li_str.xpath('div/h2[@class="dd-content "]/a/@title')[0].extract()
                 doc_link_arr.append({'tutorial': w3c_item['slug'],
-                                     'ismenu': 0,
+                                     'is_menu': 0,
                                      'slug': slug,
                                      'name': title,
                                      'description': '',
@@ -62,7 +62,7 @@ class W3cschoolSpider(scrapy.Spider):
             else:
                 title = li_str.xpath('div/h2[@class="menu-title"]/span/@title')[0].extract()
                 doc_link_arr.append({'tutorial': w3c_item['slug'],
-                                     'ismenu': 1,
+                                     'is_menu': 1,
                                      'slug': slug,
                                      'name': title,
                                      'description': title + '_来自' + w3c_item['name'] + ',w3cxyz',
@@ -83,7 +83,7 @@ class W3cschoolSpider(scrapy.Spider):
                     else:
                         doc_link = 'http://www.w3cschool.cn' + str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
                     doc_link_arr.append({'tutorial': w3c_item['slug'],
-                                         'ismenu': 0,
+                                         'is_menu': 0,
                                          'slug': doc_slug,
                                          'name': doc_name,
                                          'description': '',
@@ -98,7 +98,7 @@ class W3cschoolSpider(scrapy.Spider):
 
 
         #         w3c_item['tutorial_doc'].append({'tutorial_id': 1,
-        #                                          'ismenu': ismenu,
+        #                                          'is_menu': is_menu,
         #                                          'slug': slug,
         #                                          'name': title,
         #                                          'description': title + '_来自' + w3c_item['name'] + ',w3cxyz',
@@ -110,15 +110,15 @@ class W3cschoolSpider(scrapy.Spider):
         # index = 0
         # for li_str in li_list[0:]:
         #     slug = li_str.xpath('@data-id')
-        #     ismenu = li_str.xpath('@ismenu')
+        #     is_menu = li_str.xpath('@ismenu')
         #
-        #     if not ismenu:
+        #     if not is_menu:
         #         title = li_str.xpath('div/h2[@class="menu-title"]/span/@title')[0].extract()
         #     else:
         #         title = li_str.xpath('div/h2[@class="menu-title"]/span/@title')[0].extract()
         #         index = index+1
         #         w3c_item['tutorial_doc'].append({'tutorial_id':1,
-        #                                          'ismenu':ismenu,
+        #                                          'is_menu':is_menu,
         #                                          'slug':slug,
         #                                          'name':title,
         #                                          'description':title+'_来自'+w3c_item['name']+',w3cxyz',
@@ -152,7 +152,7 @@ class W3cschoolSpider(scrapy.Spider):
         les = response.meta['les']
         tbd = response.meta['tbd']
 
-        if les['ismenu'] == 1:
+        if les['is_menu'] == 1:
             w3c_item['tutorial_doc'].append(les)
         else:
             les['description'] = response.xpath('/html/head/meta[@name="description"]/@content')[0].extract()

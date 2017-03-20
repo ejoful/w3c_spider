@@ -25,15 +25,15 @@ class W3CItem(scrapy.Item):
 
     tutorial_doc = scrapy.Field()
 
-
-    # 教程文章页面
-    tutorial_doc_menu_name = scrapy.Field()
-    tutorial_doc_menu_position = scrapy.Field()
-    tutorial_doc_menu_slug = scrapy.Field()
-
-    # 教程文章列表
-    tutorial_doc_slug = scrapy.Field()
-    tutorial_doc_name = scrapy.Field()
-    tutorial_doc_is_menu = scrapy.Field()
-    tutorial_doc_menu_position = scrapy.Field()
-    tutorial_doc_content = scrapy.Field()
+    #
+    # # 教程文章页面
+    # tutorial_doc_menu_name = scrapy.Field()
+    # tutorial_doc_menu_position = scrapy.Field()
+    # tutorial_doc_menu_slug = scrapy.Field()
+    #
+    # # 教程文章列表
+    # tutorial_doc_slug = scrapy.Field()
+    # tutorial_doc_name = scrapy.Field()
+    # tutorial_doc_is_menu = scrapy.Field()
+    # tutorial_doc_menu_position = scrapy.Field()
+    # tutorial_doc_content = scrapy.Field()
