@@ -138,7 +138,7 @@ class W3cschoolSpider(scrapy.Spider):
         if not tbd:
             yield w3c_item
         else:
-            les = tbd.pop()
+            les = tbd.pop(0)
             link = les['link']
             # print(les)
             # exit()

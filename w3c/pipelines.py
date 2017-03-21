@@ -24,7 +24,7 @@ class MysqlPipeline(object):
             db='w3c',
             host='127.0.0.1',
             user='root',
-            passwd='',
+            passwd='moon',
             cursorclass=MySQLdb.cursors.DictCursor,
             charset='utf8',
             use_unicode=True)
@@ -62,6 +62,8 @@ class MysqlPipeline(object):
                 sql = """INSERT INTO `w3c_tutorial_doc` (`tutorial`, `is_menu`, `slug`, `name`, `description`,  `content`, `tag`, `position`)
                                              VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"""
                 print(le)
+
+                # exit()
                 print('/n/n/n')
                 params = ( le['tutorial'], le['is_menu'], le['slug'], le['name'], le['description'], le['content'], le['tag'], le['position'])
                 tx.execute(sql, params)
