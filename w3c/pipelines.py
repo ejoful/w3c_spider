@@ -56,16 +56,16 @@ class MysqlPipeline(object):
             #     log.msg("Item already stored in db: %s" % item, level=log.DEBUG)
             # else:
 
-            print(item['tutorial_doc'])
-            print('/n/n/n')
+            # print(item['tutorial_doc'])
+            # print('/n/n/n')
             for le in item['tutorial_doc']:
                 sql = """INSERT INTO `w3c_tutorial_doc` (`tutorial`, `is_menu`, `slug`, `name`, `description`,  `content`, `tag`, `position`)
                                              VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"""
-                print(le)
-
-                # exit()
-                print('/n/n/n')
-                params = ( le['tutorial'], le['is_menu'], le['slug'], le['name'], le['description'], le['content'], le['tag'], le['position'])
+                # print(le)
+                #
+                # # exit()
+                # print('/n/n/n')
+                params = (le['tutorial'], le['is_menu'], le['slug'], le['name'], le['description'], le['content'], le['tag'], le['position'])
                 tx.execute(sql, params)
 
 

@@ -7,7 +7,7 @@ class W3cschoolSpider(scrapy.Spider):
     name = "w3cschool"
     allowed_domains = ["w3cschool.cn"]
     start_urls = (
-        'http://www.w3cschool.cn/html/',
+        "http://www.w3cschool.cn/css3/",
     )
     # 编码设置为utf8,避免中文显示为unicode编码
     reload(sys)
@@ -20,7 +20,7 @@ class W3cschoolSpider(scrapy.Spider):
         # url_arr = url_str.split('/')
 
         # w3c_item['slug'] = url_arr[-1]
-        w3c_item['slug'] = 'html'
+        w3c_item['slug'] = 'css3'
         w3c_item['name'] = response.xpath('//div[@class="coverinfo"]/h1/text()')[0].extract()
         w3c_item['description'] = response.xpath('//div[@class="coverinfo-desc"]/p/text()')[0].extract()
         img_path_str = response.xpath('//img[@class="pimgcover"]/@src')[0].extract()
@@ -43,6 +43,8 @@ class W3cschoolSpider(scrapy.Spider):
         index = 0
         for li_str in li_list[0:]:
             slug = str(li_str.xpath('@data-id')[0].extract())
+            # if slug == 'css-rwd-videos':
+            #     break
             # slug = slug_arr[0]
             link = 'http://www.w3cschool.cn/' + str(w3c_item['slug']) + '/' + slug + '.html'
             is_menu = li_str.xpath('@ismenu')[0].extract()
@@ -78,10 +80,14 @@ class W3cschoolSpider(scrapy.Spider):
                     doc_slug = doc_li.xpath('@data-id')[0].extract()
                     doc_name = doc_li.xpath('div[@class="dd-content "]/a/@title')[0].extract()
                     # doc_link = ''
-                    if index == 42:
-                        doc_link = str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
-                    else:
-                        doc_link = 'http://www.w3cschool.cn' + str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
+                    # if index == 42:
+                    #     doc_link = str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
+                    # else:
+                    #     doc_link = 'http://www.w3cschool.cn' + str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
+                    # if doc_slug == 'css-wcz322wm':
+                    #     doc_link = str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
+                    # else:
+                    doc_link = 'http://www.w3cschool.cn' + str(doc_li.xpath('div[@class="dd-content "]/a/@href')[0].extract())
                     doc_link_arr.append({'tutorial': w3c_item['slug'],
                                          'is_menu': 0,
                                          'slug': doc_slug,

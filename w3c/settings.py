@@ -34,10 +34,10 @@ USER_AGENTS = [
 ]
 
 PROXIES = [
-	{'ip_port': '121.232.146.58:9000', 'user_pass': ''},
-	{'ip_port': '121.232.144.29:9000', 'user_pass': ''},
-	{'ip_port': '121.232.146.205:9000', 'user_pass': ''},
-	{'ip_port': '117.90.6.14:9000', 'user_pass': ''},
+	# {'ip_port': '120.37.165.124:9000', 'user_pass': ''},
+	{'ip_port': '101.4.136.34:8080', 'user_pass': ''},
+	# {'ip_port': '61.185.219.126：3128', 'user_pass': ''},
+	# {'ip_port': '117.90.6.14:9000', 'user_pass': ''},
 	# {'ip_port': '222.37.5.5:80', 'user_pass': ''},
 	# {'ip_port': '124.88.67.52:843', 'user_pass': ''},
 ]
@@ -79,8 +79,8 @@ COOKIES_ENABLED = False
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   # 'w3c.middlewares.ProxyMiddleware': 1,
-   # 'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 2,
+   'w3c.middlewares.ProxyMiddleware': 1,
+   'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 2,
    'w3c.middlewares.RandomUserAgent': 3,
 }
 
