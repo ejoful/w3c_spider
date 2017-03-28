@@ -34,12 +34,12 @@ USER_AGENTS = [
 ]
 
 PROXIES = [
-	# {'ip_port': '120.37.165.124:9000', 'user_pass': ''},
-	{'ip_port': '101.4.136.34:8080', 'user_pass': ''},
-	# {'ip_port': '61.185.219.126：3128', 'user_pass': ''},
-	# {'ip_port': '117.90.6.14:9000', 'user_pass': ''},
+	{'ip_port': '127.0.0.1:8581', 'user_pass': ''},
+	# {'ip_port': '180.76.154.5:8888', 'user_pass': ''},
+	# {'ip_port': '124.88.67.24:80', 'user_pass': ''},
 	# {'ip_port': '222.37.5.5:80', 'user_pass': ''},
-	# {'ip_port': '124.88.67.52:843', 'user_pass': ''},
+	# {'ip_port': '124.42.7.103:80', 'user_pass': ''},
+	# {'ip_port': '121.40.42.35:9999', 'user_pass': ''},
 ]
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'w3c (+http://www.yourdomain.com)'
@@ -53,7 +53,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -79,8 +79,8 @@ COOKIES_ENABLED = False
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'w3c.middlewares.ProxyMiddleware': 1,
-   'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 2,
+   # 'w3c.middlewares.ProxyMiddleware': 1,
+   # 'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 2,
    'w3c.middlewares.RandomUserAgent': 3,
 }
 

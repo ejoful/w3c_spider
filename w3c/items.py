@@ -11,6 +11,7 @@ import scrapy
 class W3CItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    category = scrapy.Field()
     tutorial_category = scrapy.Field()
     tutorial_category_position = scrapy.Field()
 
