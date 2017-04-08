@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://www.w3cschool.cn/phalapi/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>PhalApi - v1.3.4 官方开发文档_w3cschool</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="keywords" content="PhalApi - v1.3.4 官方开发文档"> 
+<meta name="description" content="PhalApi是一个PHP轻量级开源接口框架，并承诺永久免费！
+
+我们致力于将PhalApi维护成像恒星一样：
+不断更新，保持生气；为接口负责，为开源负责！让后台接口开发更简单！
+
+更多请访问官网：http://www.phalapi.net/_来自PhalApi - v1.3.4 官方开发文档，w3cschool。">
+<link rel="stylesheet" href="./phalapi_files/w3.css">
+<link rel="stylesheet" href="./phalapi_files/project.css">
+<link rel="shortcut icon" href="http://www.w3cschool.cn/statics/images/favicon.ico">
+<link href="./phalapi_files/default.css" rel="stylesheet" type="text/css">
+<script src="./phalapi_files/push.js.下载"></script><script src="./phalapi_files/hm.js.下载"></script><script src="./phalapi_files/highlight.pack.js.下载" type="text/javascript"></script>
+<script src="./phalapi_files/jquery.min.js.下载" type="text/javascript"></script>
+<script src="./phalapi_files/jquery.cookie.min.js.下载" type="text/javascript"></script>
+<script src="./phalapi_files/share.js.下载"></script><link rel="stylesheet" href="./phalapi_files/share_style2_16.css"><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body id="homefirst">
+<!--引入头部-->
+<!--header start--> 
+<div id="header_item">
+<div id="header_index">
+<div id="header-l">
+<a href="http://www.w3cschool.cn/" title="w3cschool" class="logo"><img src="./phalapi_files/header-logo.png" alt="W3Cschool"></a>
+<ul class="header-menu">
+<li><a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">编程入门教程</a></li>
+<li><a href="http://www.w3cschool.cn/manual" title="开源文档">开源文档</a></li>
+<li><a href="http://www.w3cschool.cn/examples" title="编程实例">编程实例</a></li>
+<li><a href="http://www.w3cschool.cn/dict/" title="速查词典">速查词典</a></li>
+<li><a href="http://www.w3cschool.cn/exam/" title="编程题库">题库</a></li>
+<li class="dropdown"><a href="http://www.w3cschool.cn/phalapi/#" class="dropbtn">更多 <i class="down-icon1 angle-down-icon"></i></a>
+<div class="dropdown-content">
+<a href="http://www.w3cschool.cn/codecamp/" title="编程实战训练">编程实战训练</a>
+<a href="http://www.w3cschool.cn/question/" title="编程问答">编程问答</a>
+<a href="http://www.w3cschool.cn/codedemo" title="代码实例">代码实例</a>
+<a href="http://www.w3cschool.cn/position/positionlist" title="职位进阶">职位进阶</a>
+<a href="http://www.w3cschool.cn/popularuser" title="排行榜">排行榜</a>
+</div> 
+</li>
+</ul>
+</div>
+<div id="header-r">
+<div class="searchbox">
+<form action="http://www.w3cschool.cn/search" target="_self">
+<input type="text" name="w" class="box" id="searched_content" placeholder="输入关键字搜索...">
+<button type="submit" class="button"></button>
+</form>
+</div>
+<div class="sig-box"><div><a href="http://www.w3cschool.cn/register?refer=/phalapi" class="login-bg">注册</a> | <a href="http://www.w3cschool.cn/login?refer=/phalapi">登录</a></div></div>
+</div>
+</div>
+</div>
+<div id="navfirst_item">
+<div id="navfirst">
+<ul id="menu">
+<li><a href="http://www.w3cschool.cn/" title="w3cschool首页"><i class="home-icon img-icon"></i>首页</a></li>
+<li><a href="http://www.w3cschool.cn/html/" title="HTML教程">HTML</a></li>
+<li><a href="http://www.w3cschool.cn/css/" title="CSS教程">CSS</a></li>
+<li><a href="http://www.w3cschool.cn/javascript/" title="Javascript教程">Javascript</a></li>
+<li><a href="http://www.w3cschool.cn/jquery/" title="Jquery教程">Jquery</a></li>
+<li><a href="http://www.w3cschool.cn/bootstrap/" title="Bootstrap教程">Bootstrap</a></li>
+<li><a href="http://www.w3cschool.cn/php/" title="PHP教程">PHP</a></li>
+<li><a href="http://www.w3cschool.cn/java/" title="Java教程">Java</a></li>
+<li><a href="http://www.w3cschool.cn/python/" title="Python教程">Python</a></li>
+<li><a href="http://www.w3cschool.cn/mysql/" title="MySQL教程">MySQL</a></li>
+<li><a href="http://www.w3cschool.cn/sql/" title="SQL教程">SQL</a></li>
+<li><a href="http://www.w3cschool.cn/json/" title="JSON教程">Json</a></li>
+<!--<li><a href="//www.w3cschool.cn/c/" title="C教程">C</a></li>-->
+<li><a href="http://www.w3cschool.cn/weixinapp/" title="微信小程序开发文档">微信小程序</a></li>
+<li><a href="http://123.w3cschool.cn/webtools" target="_blank" title="W3Cschool在线工具集合">在线工具</a></li>
+<li><a href="http://123.w3cschool.cn/" target="_blank" title="W3Cschool极客导航">极客导航</a></li>
+<!--<li><a href="//www.w3cschool.cn/position/positionList" title="职业路线">职业路线</a></li>-->
+<li><a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">更多...</a></li>
+</ul>
+</div>
+</div>
+<script>
+var apppath = '/phalapi';
+var domain  = '//www.w3cschool.cn';
+</script>
+<!--header end-->
+ 
+<div id="wrapper" class="project-wrapper">
+<div id="navsecond">
+<div id="course">
+<h2>目录</h2>
+</div> 
+<div class="sidebar-content">
+<div class="sidebar-tree">
+<div class="sidebar-tree-content">
+<div class="dd" id="nestable_handbook" data-tid="" data-id="handbook">
+<ol class="dd-list" style="margin: 10px 6px;padding: 0;">
+<li class="dd-item  " data-id="vi9o1t4f" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="前言">
+前言</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="al2p1t4o">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/al2p1t4o.html" title="接口，从简单开始！">开始</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="n6ca1t4p" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="开篇">
+开篇</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="69ex1t4w">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/69ex1t4w.html" title="下载与安装">下载与安装</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="xmcr1t4x">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/xmcr1t4x.html" title="创建一个自己的项目">创建项目</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="p2yu1t4y">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/p2yu1t4y.html" title="在线体验">在线体验</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="q2ju1t4z">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/q2ju1t4z.html" title="文档、帮助和官网">文档</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="9z1j1t50">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/9z1j1t50.html" title="对PhalApi框架的抉择">对PhalApi框架的抉择</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="awph1t4q" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="开发手册">
+开发手册</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="hitr1tq6">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/hitr1tq6.html" title="快速入门: 接口开发示例(源码+图文)">接口开发示例</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="aj2c1tqm">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/aj2c1tqm.html" title="参数规则：接口参数规则配置">接口参数规则配置</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="or4n1tqn">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/or4n1tqn.html" title="统一的接口请求方式：?sevice=XXX.XXX">统一的接口请求方式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="xlru1tqo">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/xlru1tqo.html" title="统一的返回格式和结构：ret data msg">统一的返回格式和结构</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4e7f1tqp">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/4e7f1tqp.html" title="数据库操作：基于NotORM的使用及优化">数据库操作：基于NotORM的使用及优化</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="zs4m1tqq">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/zs4m1tqq.html" title="配置读取：内外网环境配置的完美切换">配置读取：内外网环境配置的完美切换</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="jlgt1tqr">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/jlgt1tqr.html" title="日志纪录：简化版的日志接口">日志纪录：简化版的日志接口</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="um591tqs">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/um591tqs.html" title="快速函数：人性化的关怀">快速函数：人性化的关怀</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="wnal1tqt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/wnal1tqt.html" title="DI服务速查：各资源服务一览表">DI服务速查：各资源服务一览表</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="7h1s1tqu">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/7h1s1tqu.html" title="DB操作：数据库基本操作速查">DB操作：数据库基本操作速查</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="s1w61t4r" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="更多技艺">
+更多技艺</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+ 
+  
+<li class="dd-item  " data-id="imz11tqv">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/imz11tqv.html" title="类的自动加载：遵循PEAR包的命名规范">类的自动加载：遵循PEAR包的命名规范</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="p3d81tqw">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/p3d81tqw.html" title="签名验证：自定义签名规则">签名验证：自定义签名规则</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="e1q21tqx">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/e1q21tqx.html" title="请求和响应：GET和POST两者皆可得及超越JSON格式返回">请求和响应：GET和POST两者皆可得及超越JSON格式返回</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="87gm1tqy">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/87gm1tqy.html" title="缓存策略：更灵活地可配置化的多级缓存">缓存策略：更灵活地可配置化的多级缓存</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="et4g1tqz">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/et4g1tqz.html" title="国际化翻译：为走向国际化提前做好翻译准备">国际化翻译：为走向国际化提前做好翻译准备</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="s8jp1tr0">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/s8jp1tr0.html" title="数据安全：数据对称加密方案">数据安全：数据对称加密方案</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="kby21tr1">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/kby21tr1.html" title="精益开发：更富表现力的Model层和重量级数据获取的应对方案">精益开发：更富表现力的Model层和重量级数据获取的应对方案</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="qvkd1tr2">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/qvkd1tr2.html" title="COOKIE：对COOKIE原生态的支持及记忆加密升级版">COOKIE：对COOKIE原生态的支持及记忆加密升级版</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="e9rp1tr3">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/e9rp1tr3.html" title="开放与封闭：多入口和统一初始化">开放与封闭：多入口和统一初始化</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bcys1tr4">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/bcys1tr4.html" title="保持的力量：接口开发最佳实践">保持的力量：接口开发最佳实践</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bkhz1tr5">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/bkhz1tr5.html" title="新型计划任务：以接口形式实现的计划任务">新型计划任务：以接口形式实现的计划任务</a>
+</div>
+</li> 
+ 
+</ol></li>
+<li class="dd-item  " data-id="57m61t4s" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="思想与应用">
+思想与应用</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="is3l1tsb">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/is3l1tsb.html" title="核心思想：Di依赖注入 让资源更可控">核心思想：Di依赖注入 让资源更可控</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="jzxk1tsc">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/jzxk1tsc.html" title="海量数据：可配置的分库分表">海量数据：可配置的分库分表</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="rb9s1tsd">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/rb9s1tsd.html" title="接口调试：在线sql语句查看与性能优化">接口调试：在线sql语句查看与性能优化</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ed3p1tse">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/ed3p1tse.html" title="测试驱动开发：意图导向编程下的接口开发">测试驱动开发：意图导向编程下的接口开发</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hudy1tsf">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/hudy1tsf.html" title="演进：新型计划任务续篇">演进：新型计划任务续篇</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="qgno1tsg">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/qgno1tsg.html" title="领域驱动设计：应对复杂领域业务的Domain层">领域驱动设计：应对复杂领域业务的Domain层</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="zwr51tsh">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/zwr51tsh.html" title="微服务：Api接口服务层">微服务：Api接口服务层</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="dgme1tsi">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/dgme1tsi.html" title="定制化：资源服务的再实现">定制化：资源服务的再实现</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="v56c1tsj">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/v56c1tsj.html" title="扩展库：可重用的扩展类库">扩展库：可重用的扩展类库</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ilw31tsk">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/ilw31tsk.html" title="约定编程：架构明显的编程风格">约定编程：架构明显的编程风格</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="kf3n1t4t" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="工具与实践">
+工具与实践</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+ 
+  
+<li class="dd-item  " data-id="1sp41tsl">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/1sp41tsl.html" title="服务器统一部署方案简明版：CentOs + Nginx + php-fpm + MySql [+ Memcached]">服务器统一部署方案简明版：CentOs + Nginx + php-fpm + MySql [+ Memcached]</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bopr1tsm">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/bopr1tsm.html" title="更多工具：精英项目和团队建设">更多工具：精英项目和团队建设</a>
+</div>
+</li> 
+ 
+</ol></li>
+<li class="dd-item  " data-id="7xo81t4i" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="扩展类库">扩展类库</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="59fv1tsn">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/59fv1tsn.html" title="微信开发">微信开发</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="uamh1tso">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/uamh1tso.html" title="代理模式下phprpc协议的轻松支持">代理模式下phprpc协议的轻松支持</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="2fr91tsp">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/2fr91tsp.html" title="基于PHPMailer的邮件发送">基于PHPMailer的邮件发送</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bqjt1tsq">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/bqjt1tsq.html" title="优酷开放平台接口调用">优酷开放平台接口调用</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="d3qj1tsr">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/d3qj1tsr.html" title="七牛云存储接口调用">七牛云存储接口调用</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="zlk71tss">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/zlk71tss.html" title="新型计划任务">新型计划任务</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="k1va1tst">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/k1va1tst.html" title="用户、会话和第三方登录集成">用户、会话和第三方登录集成</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ien71tsu">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/ien71tsu.html" title="swoole支持下的长链接和异步任务实现">swoole支持下的长链接和异步任务实现</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="je3x1tsv">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/je3x1tsv.html" title="Auth 权限扩展 (由@黄苗笋提供)">Auth 权限扩展 (由@黄苗笋提供)</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="kzsq1tsw">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/kzsq1tsw.html" title="基于FastRoute的快速路由（支持RESTful）">基于FastRoute的快速路由（支持RESTful）</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="8nyr1tsy">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/8nyr1tsy.html" title="基于PhalApi的DB集群拓展Cluster (由@喵了个咪提供)">基于PhalApi的DB集群拓展Cluster (由@喵了个咪提供)</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="izph1tt0">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/izph1tt0.html" title="基于PhalApi的Redis拓展 (由@喵了个咪提供)">基于PhalApi的Redis拓展 (由@喵了个咪提供)</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="az671tt1">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/az671tt1.html" title="基于PhalApi的图片上传拓展 (由@Summer)">基于PhalApi的图片上传拓展 (由@Summer)</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4el81tt2">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/4el81tt2.html" title="基于PhalApi的第三方支付拓展 (由@Summer)">基于PhalApi的第三方支付拓展 (由@Summer)</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="v6nq1tt3">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/v6nq1tt3.html" title="PhalApi-Image -- 图像处理 (由@喵了个咪提供)">PhalApi-Image -- 图像处理 (由@喵了个咪提供)</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="fshu1t4j" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="项目实践">项目实践</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="kahm1tt4">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/kahm1tt4.html" title="利用扩展库进行微信服务号开发">利用扩展库进行微信服务号开发</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="5jep1tt5">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/5jep1tt5.html" title="模拟优酷开放平台接口项目开发">模拟优酷开放平台接口项目开发</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="3e9v1tt6">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/3e9v1tt6.html" title="一个简单的小型项目开发（奔跑吧兄弟投票活动）">一个简单的小型项目开发（奔跑吧兄弟投票活动）</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="j2g81tt7">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/j2g81tt7.html" title="一个可能的大型项目开发（多终端多版本）">一个可能的大型项目开发（多终端多版本）</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="vbjh1t4k" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="其他">其他</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="a1sj1tta">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/a1sj1tta.html" title="架构与思想：Phal Api核心设计和思想解读">架构与思想：Phal Api核心设计和思想解读</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bgk71ttb">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/bgk71ttb.html" title="杂谈：扯一些phal Api的前世和今生">杂谈：扯一些phal Api的前世和今生</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="pd3h1ttc">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/pd3h1ttc.html" title="框架总结：术语表和PHP开发建议">框架总结：术语表和PHP开发建议</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="b9371ttd">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/b9371ttd.html" title="许可">许可</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="xoia1tte">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/xoia1tte.html" title="联系和加入我们">联系和加入我们</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="gjxi1ttf">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/gjxi1ttf.html" title="更新日志">更新日志</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="1grl1ttg">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/1grl1ttg.html" title="致框架贡献者：加入PhalApi开源指南">致框架贡献者：加入PhalApi开源指南</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="5fhi1tth">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/5fhi1tth.html" title="附录1：接口文档参考模板">附录1：接口文档参考模板</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="fnia1t4l" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="SDK包">SDK包</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="p7q81tti">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/p7q81tti.html" title="基于接口查询语言的SDK包">基于接口查询语言的SDK包</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="7ihg1ttj">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/7ihg1ttj.html" title="SDK包（JAVA版）">SDK包（JAVA版）</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="8uny1ttk">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/8uny1ttk.html" title="SDK包（PHP版）">SDK包（PHP版）</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="varp1ttl">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/varp1ttl.html" title="SDK包（object c版） 由@Aevit 提供">SDK包（object c版） 由@Aevit 提供</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="dw3j1ttm">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/dw3j1ttm.html" title="SDK包（javascript版） 由@喵了个咪 提供">SDK包（javascript版） 由@喵了个咪 提供</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="3vh41ttn">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/3vh41ttn.html" title="SDK包（Ruby版）">SDK包（Ruby版）</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="82kq1t4u" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="教程-入门篇">
+教程-入门篇</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="9zp31tto">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/9zp31tto.html" title="简单介绍以及环境搭建">简单介绍以及环境搭建</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="9pd71ttp">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/9pd71ttp.html" title="把它玩起来">把它玩起来</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="n6da1ttq">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/n6da1ttq.html" title="请求和返回">请求和返回</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="uld31ttr">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/uld31ttr.html" title="国际化高可用和自动生成文档">国际化高可用和自动生成文档</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="lxp71tts">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/lxp71tts.html" title="数据库操作和Model层">数据库操作和Model层</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="74qp1ttt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/74qp1ttt.html" title="小技巧和浅谈API适用范围以及入门篇总结">小技巧和浅谈API适用范围以及入门篇总结</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="goxp1t4v" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="教程-进阶篇">
+教程-进阶篇</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+ 
+  
+<li class="dd-item  " data-id="8gdw1ttu">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/8gdw1ttu.html" title="三层结构Api,Domain,和Model">三层结构Api,Domain,和Model</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="xvuc1ttv">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/xvuc1ttv.html" title="DI依赖注入和单例模式">DI依赖注入和单例模式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="yw1j1ttw">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/yw1j1ttw.html" title="自动加载和拦截器">自动加载和拦截器</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="nsx11ttx">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/nsx11ttx.html" title="notrom进阶以及事务操作">notrom进阶以及事务操作</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="udo61tty">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/udo61tty.html" title="数据库读写分离">数据库读写分离</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="u78h1ttz">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/u78h1ttz.html" title="解决大量数据存储数据库分表分库拓展">解决大量数据存储数据库分表分库拓展</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ur2g1tu0">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/ur2g1tu0.html" title="使用缓存以及用redis拓展解决实际问题">使用缓存以及用redis拓展解决实际问题</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="f9c21tu1">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/f9c21tu1.html" title="PhalApi能带来什么和进阶篇总结">PhalApi能带来什么和进阶篇总结</a>
+</div>
+</li> 
+ 
+</ol></li>
+<li class="dd-item  " data-id="iso41t4n" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="视频教程">视频教程</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="frvt1tu2">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/phalapi/frvt1tu2.html" title="PhalApi视频教程">PhalApi视频教程</a>
+</div>
+</li> 
+ 
+</ol></li>  
+</ol>
+</div>  
+</div>
+</div>
+</div>
+</div>
+<div id="pro-mian" class="main-container">
+<div class="project-cover">
+<div id="pcover">
+<div class="portlet">
+<div class="coverimg">
+<a href="http://www.w3cschool.cn/phalapi" title="PhalApi - v1.3.4 官方开发文档">                
+<img class="pimgcover" src="./phalapi_files/cover_phalapi.jpg" width="150" height="150" alt="PhalApi - v1.3.4 官方开发文档">
+</a>
+</div>
+<div class="coverinfo">
+<h1>PhalApi - v1.3.4 官方开发文档</h1>
+<div class="coverinfo-desc">
+<h2>手册简介:</h2>
+<p>PhalApi是一个PHP轻量级开源接口框架，并承诺永久免费！
+
+我们致力于将PhalApi维护成像恒星一样：
+不断更新，保持生气；为接口负责，为开源负责！让后台接口开发更简单！
+
+更多请访问官网：http://www.phalapi.net/</p>
+<div class="content-group">
+<span id="content-head-viewcount"><i class="viewcount-icon"></i><span>阅读(380)</span></span>
+<a id="hbstar" href="javascript:;" onclick="isProjectStar()" data-type="star"><i class="star-icon"></i><span>收藏</span></a>
+<a class="btn-thumbs-up" href="javascript:;" onclick="isProjectLike()"><i class="thumbs-up-icon"></i><span id="likestatus">赞</span>(<span id="likecount">2</span>)</a>
+<a href="javascript:;" title="分享" class="share-km-a btn btn-sm popup_more bdsharebuttonbox bdshare-button-style2-16" data-cmd="more" data-bd-bind="1491617718875"><i class="share-icon"></i><span>分享</span></a>
+<a id="newversion" href="javascript:;" onclick="newversion()"><i class="newversion-icon"></i><span>新版预览</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="project-desc2">
+<h3><i class="icon-reorder"></i>更新记录：</h3>
+<ul class="portlet-body">
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/q2ju1t4z.html" title="文档、帮助和官网"><i class="icons-img icons-artile"></i>文档、帮助和官网</a>
+<span class="logtime">11-22 22:08</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/j2g81tt7.html" title="一个可能的大型项目开发（多终端多版本）"><i class="icons-img icons-artile"></i>一个可能的大型项目开发（多终端多版本）</a>
+<span class="logtime">11-21 21:33</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/3e9v1tt6.html" title="一个简单的小型项目开发（奔跑吧兄弟投票活动）"><i class="icons-img icons-artile"></i>一个简单的小型项目开发（奔跑吧兄弟投票活动）</a>
+<span class="logtime">11-21 21:33</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/5jep1tt5.html" title="模拟优酷开放平台接口项目开发"><i class="icons-img icons-artile"></i>模拟优酷开放平台接口项目开发</a>
+<span class="logtime">11-21 21:33</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/kahm1tt4.html" title="利用扩展库进行微信服务号开发"><i class="icons-img icons-artile"></i>利用扩展库进行微信服务号开发</a>
+<span class="logtime">11-21 21:33</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/izph1tt0.html" title="基于PhalApi的Redis拓展 (由@喵了个咪提供)"><i class="icons-img icons-artile"></i>基于PhalApi的Redis拓展 (由@喵了个咪提供)</a>
+<span class="logtime">11-21 21:33</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/8nyr1tsy.html" title="基于PhalApi的DB集群拓展Cluster (由@喵了个咪提供)"><i class="icons-img icons-artile"></i>基于PhalApi的DB集群拓展Cluster (由@喵了个咪提供)</a>
+<span class="logtime">11-21 21:33</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/kzsq1tsw.html" title="基于FastRoute的快速路由（支持RESTful）"><i class="icons-img icons-artile"></i>基于FastRoute的快速路由（支持RESTful）</a>
+<span class="logtime">11-21 21:32</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/je3x1tsv.html" title="Auth 权限扩展 (由@黄苗笋提供)"><i class="icons-img icons-artile"></i>Auth 权限扩展 (由@黄苗笋提供)</a>
+<span class="logtime">11-21 21:32</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/phalapi/k1va1tst.html" title="用户、会话和第三方登录集成"><i class="icons-img icons-artile"></i>用户、会话和第三方登录集成</a>
+<span class="logtime">11-21 21:32</span>
+</div>
+</li>
+</ul>
+</div>
+</div> 
+<script type="text/javascript">
+function isProjectLike(){
+$.ajaxdo({
+url: "/project/islike/phalapi.html",
+type: "post",
+dataType: 'json',
+data: {},
+sync: false,
+success: function (data) {
+if (data.statusCode == 200) {
+$('.avatar-list').find('p').remove();
+$('.avatar-list').append('<a href="/u/' + data.data + '" title="' + data.data + '"><img src="/attachments/avatar/avatar_' + data.data + '.jpg" title=""></a>');
+var likecount = $("#likecount").text() * 1 + 1;
+$("#likecount").html(likecount);
+$(".btn-thumbs-up i").attr('class','thumbs-up-icon-isdone');
+$("#likestatus").html('已赞');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+
+function isProjectStar(){
+var type = $('#hbstar').attr('data-type');
+$.ajaxdo({
+url: "/project/star/phalapi.html",
+type: "post",
+dataType: 'json',
+data: {},
+success: function (data) {
+if(data.statusCode == 200){
+if (type == 'star') {
+$('#hbstar').html('<i class="star-icon-isdone"></i><span>已收藏</span>');
+$('#hbstar').attr('data-type','rstar');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+$('#hbstar').html('<i class="star-icon"></i><span>收藏</span>');
+$('#hbstar').attr('data-type','star');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+}
+}else{
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+</script>
+</div>
+</div>
+<div id="sidebar">
+<div class="tools-box">
+<div id="course">
+<h2>扩展栏目</h2>
+</div>
+<div id="tools">
+<h5 id="tools_1"><a href="http://www.w3cschool.cn/webide">开发工具IDE</a></h5>         
+<h5 id="tools_3"><a href="http://www.w3cschool.cn/codecamp/">编程训练营</a></h5>
+</div>
+</div>
+<!--广告放置-->
+<div class="sidebar-box">    <div id="course">        <h2>Advertisement</h2>    </div><div class="abox">    <a href="http://www.w3cschool.cn/index/adlog?url=//shang.qq.com/wpa/qunwpa?idkey=25c171d8c57c2814d71d29d7135c1fd7f1d8e1f8afb8502779428d7104e07f95&amp;type=sidebar" target="_blank" rel="nofollow"><img src="./phalapi_files/1491565730758832.jpg" alt="大牛教你学Java"></a></div></div> 
+<!--分类导航-->
+<!--siderbar_nav start--> 
+<div class="sidebar-box">
+<div id="course">
+<h2>分类导航</h2>
+</div>
+<ul class="nav1">
+<li class="li1">
+<a href="javascript:;">最新推荐</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/freejquery/index.html" title="免费Jquery插件合集">免费Jquery插件合集</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/plk2fi/index.html" title="前端学习资源汇总">前端学习资源汇总</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wxxcx/index.html" title="微信小程序资源汇总">微信小程序资源汇总</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/smarty/index.html" title="Smarty教程">Smarty教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/kfm2f1/index.html" title="SEO基础知识教程">SEO基础知识教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wkspring/index.html" title="Spring 教程">Spring 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">HTML/CSS</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/html/index.html" title="HTML教程">HTML教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/html5/index.html" title="HTML5教程">HTML5教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/css/index.html" title="CSS教程">CSS教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/css3/index.html" title="CSS3教程">CSS3教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/bootstrap/index.html" title="bootstrap教程">bootstrap教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/foundation/index.html" title="Foundation5 教程">Foundation5 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">javascript</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/javascript/index.html" title="javascript教程">javascript教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/htmldom/index.html" title="HTML DOM教程">HTML DOM教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jquery/index.html" title="jQuery教程">jQuery教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/angularjs/index.html" title="AngularJS教程">AngularJS教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/react/index.html" title="React 教程">React 教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jqueryui/index.html" title="jQuery UI教程">jQuery UI教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jqueryeasyui/index.html" title="jQuery EasyUI教程">jQuery EasyUI教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/nodejs/index.html" title="Node.js教程">Node.js教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ajax/index.html" title="AJAX教程">AJAX教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/json/index.html" title="JSON教程">JSON教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/highcharts/index.html" title="Highcharts教程">Highcharts教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/googleditu/index.html" title="Google地图教程">Google地图教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">服务端</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/php/index.html" title="PHP教程">PHP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/python/index.html" title="python基础教程">python基础教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/python3/index.html" title="Python 3教程">Python 3教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/django/index.html" title="Django教程">Django教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/linux/index.html" title="Linux教程">Linux教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/docker/index.html" title="Docker教程">Docker教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ruby/index.html" title="Ruby教程">Ruby教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/java/index.html" title="Java教程">Java教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/c/index.html" title="C教程">C教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/cpp/index.html" title="C++教程">C++教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/perl/index.html" title="Perl 教程">Perl 教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/servlet/index.html" title="Servlet教程">Servlet教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jsp/index.html" title="JSP教程">JSP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/lua/index.html" title="Lua教程">Lua教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/scala/index.html" title="scala教程">scala教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/go/index.html" title="Go教程">Go教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/shejimoshi/index.html" title="设计模式">设计模式</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/zhengzebiaodashi/index.html" title="正则表达式">正则表达式</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/asp/index.html" title="ASP教程">ASP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/appml/index.html" title="AppML教程">AppML教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/vbscript/index.html" title="VBScript教程">VBScript教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wkspring/index.html" title="Spring 教程">Spring 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">数据库</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/sql/index.html" title="SQL教程">SQL教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/mysql/index.html" title="MySQL教程">MySQL教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/sqlite/index.html" title="SQLite教程">SQLite教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/mongodb/index.html" title="MongoDB教程">MongoDB教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/redis/index.html" title="Redis教程">Redis教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/memcached/index.html" title="Memcached教程">Memcached教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">移动端</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/android/index.html" title="Android教程">Android教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/swift/index.html" title="Swift 教程">Swift 教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jquerymobile/index.html" title="jQuery Mobile教程">jQuery Mobile教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ionic/index.html" title="ionic">ionic</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ios/index.html" title="ios开发手册">ios开发手册</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">ASP.NET</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/aspnet/index.html" title="ASP.NET教程">ASP.NET教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/csharp/index.html" title="C#教程">C#教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">Web Services</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/webservices/index.html" title="Web Services教程">Web Services教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wsdl/index.html" title="WSDL教程">WSDL教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/soap/index.html" title="SOAP教程">SOAP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/rss/index.html" title="RSS教程">RSS教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/rdf/index.html" title="RDF教程">RDF教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">开发工具</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/eclipse/index.html" title="Eclipse教程">Eclipse教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/git/index.html" title="Git教程">Git教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/firebug/index.html" title="Firebug教程">Firebug教程</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!--siderbar_nav end--></div>
+</div>
+<!--footer start-->
+<div id="footer_item">
+<div id="footer">
+<div class="footer-box">
+<div class="footer-title">网站相关</div>
+<div class="footer-items">
+<a href="http://www.w3cschool.cn/about/about.html">关于我们</a>
+<a href="http://www.w3cschool.cn/about/join.html">加入我们</a>
+<a href="http://www.w3cschool.cn/about/disclaimer.html">免责声明</a>
+<a href="http://www.w3cschool.cn/sitemap/">网站地图</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">内容专区</div>
+<div class="footer-items">
+<a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">编程入门教程</a>
+<a href="http://www.w3cschool.cn/manual" title="技术文档参考手册">开源文档</a>
+<a href="http://www.w3cschool.cn/examples" title="在线实例">在线实例</a>
+<a href="http://www.w3cschool.cn/archives/" title="文章存档">文章存档</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">常用链接</div>
+<div class="footer-items">
+<a href="http://www.w3cschool.cn/tif2eq/index.html" target="_blank" title="使用帮助">使用帮助</a>
+<a href="http://123.w3cschool.cn/" title="技术学习极客导航">极客导航</a>
+<a href="http://wiki.w3cschool.cn/" target="_blank" title="编程百科">编程百科</a>
+<a href="http://m.w3cschool.cn/" target="_blank" title="w3cschool手机版">w3cschool手机版</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">联系我们</div>
+<div class="footer-items">
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=d308d977f1e630212a6c5412057c1784314d5ce64a287e02b4e7eabeb28b1f0d" ref="nofollow">官方QQ群：496712525</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3265790599&amp;site=qq&amp;menu=yes" ref="nofollow">商务合作QQ：3265790599</a>
+<a target="_blank" href="http://www.w3cschool.cn/links" title="友情链接">友情链接QQ：3532917531</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="tcode"><img src="./phalapi_files/w3cschool.png" alt="微信订阅号" width="100" height="100"></div>
+<p class="tcode-txt">微信号：w3cschoolcn</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>Copyright©2016 亿动科技 <a href="http://www.w3cschool.cn/" title="w3cschool">w3cschool.cn </a> All Rights Reserved. 闽ICP备15016281号-3</p>
+</div>
+</div>
+<div class="bottom-tools" style="bottom: 40px;">
+<a id="scrollUp" href="javascript:;" title="飞回顶部" style="display: block;"></a>
+<a class="onlinenote" style="" title="在线笔记" href="javascript:;" data-module="page">在线笔记</a>
+<div class="qr-tool">二维码</div>
+<a id="feedback" class="webjy" title="建议反馈" href="javascript:;" data-module="page" onclick="showDialogBox(this)">建议反馈</a>
+<div class="qr-img"><img src="./phalapi_files/w3cschool.jpg" alt="二维码"></div>
+</div>
+
+<div class="feedback-Box" style="display: none;">
+<div class="feedback-Box-content" style="width: 800px;">
+<div class="feedback-Box-top">
+<span class="feedback-Box-title">意见反馈</span>
+<span onclick="closeDialogBox(this)" class="feedback-Box-close">X</span>
+</div>
+<ul>
+<li class="feedback-box">
+<div id="feedbackRadio" type="radio" name="feedbackType" data-value="0" style=""> 意见反馈：</div>
+<textarea name="reportInfo" id="elmaaa" class="feedback-text" rows="15" placeholder="请留下您宝贵的意见反馈吧。" style="width: 700px;height:200px;overflow:auto;"></textarea>
+<p>联系方式：</p>
+<input type="text" placeholder="留个联系方式呗..." name="reportAddress" class="radio-text" id="reportAddress" style="height: 30px;width: 200px;">
+</li>
+</ul>
+<button class="search-s" onclick="dialogSubmit(this)" id="reportSubmit">提交</button>
+</div>
+</div>
+
+<div id="note-start" style="display: none"></div>
+
+<div id="detail" style="display:none;">
+<div id="note-Dialog" class="note-Dialog">
+
+<div class="note-Box-content">
+<div class="ntitlebox">
+<input type="text" placeholder="" name="ntitle" class="ntitle" id="ntitle">
+</div>
+<div id="editorarea">
+<textarea name="ncontent" id="ncontent" class="ncontent" rows="15" placeholder="" style="width: 700px;height:200px;overflow:auto;"></textarea>
+</div>
+<p></p>
+<a class="closenote" href="http://www.w3cschool.cn/my/note" target="_blank">查看完整版笔记</a>
+<button class="notesubmit" id="notesubmit">保存</button>
+<button class="notebtn pull-right closenote" style="margin:20px 0">关闭</button>
+</div>
+</div>
+</div>
+<!--footer end-->
+<div class="widget-body" data-type="project"><div class="widget-main" style=""><div class="widget-box"><div class="slogn">Hi，看起来你挺喜欢这些内容，但是你还没有注册帐号！当你创建了帐号，你可以收藏感兴趣的内容，并记录你的阅读状态！</div><div class="quicklogin quick-box"><a href="http://www.w3cschool.cn/register?refer=/phalapi">立即注册</a></div><div class="sig-group"><a href="http://www.w3cschool.cn/login?refer=/phalapi">已有账号，登录</a></div></div><a class="widget-box-close" href="javascript:;" title="关闭">X</a></div></div>
+<script src="./phalapi_files/shCore.js.下载" type="text/javascript"></script>
+<script src="./phalapi_files/commonfooter.js.下载" type="text/javascript"></script><span style="display:none;" id="cnzz_stat_icon_1259964532"><a href="http://www.cnzz.com/stat/website.php?web_id=1259964532" target="_blank" title="站长统计">站长统计</a></span><script src="./phalapi_files/z_stat.php" type="text/javascript"></script><script src="./phalapi_files/core.php" charset="utf-8" type="text/javascript"></script>
+<script src="./phalapi_files/ajaxdo.core.js.下载" type="text/javascript"></script>
+<script>
+var kn = {
+ismenu:'',
+pename:'phalapi',
+kename:'',
+};
+$(function(){
+
+$(".onlinenote").show();
+
+var kename = kn.kename;
+var fid    = "";
+var uid = '0';
+// SyntaxHighlighter.config.clipboardSwf = '/plugins/ueditor/third-party/zeroclipboard/ZeroClipboard.swf';
+// SyntaxHighlighter.all();//代码高亮
+/*开启计时 准备记录积分*/
+var vcreditfull = $.cookie('ypre_vcreditfull');
+//console.log(vcreditfull);
+if(vcreditfull == undefined && uid != '0' && uid != ''){
+setTimeout(function(){
+$.ajax({
+url:"/project/setViewCredit",
+type:"post",
+data:{kename:kename},
+dataType:"json",
+success:function(msg){
+var statusCode = {
+'200':'success',
+'400':'warning',
+};
+var toastrType = statusCode[msg.statusCode];
+if(msg.statusCode == 300 || msg.statusCode == 400){
+return;
+}
+toastr[toastrType](msg.message);
+}
+});
+},30000);
+}
+hljs.initHighlightingOnLoad();//高亮代码
+// // 上一篇 下一篇
+// if(fid == "-1"){
+// $(".prenext").parent().remove();
+// }else{
+var el = $(".dd-item[data-id="+kename+"]");
+// var prevel = el.prev();
+// var nextel = el.next();
+   //  var prev = prevel.find('a')[0];
+   //  var next = nextel.find('a')[0];
+//  if(prev == undefined){
+   //     prev = el.parents(".dd-list").prev().find('a')[0];
+   //  }
+   //  if(next == undefined){
+   //     next = el.parents(".dd-item").next().find('a')[0];
+   //  }
+//  if(prevel.attr("ismenu") == 1){
+   //  prev = prevel.find
+   //  }
+//  if($(prev).length < 1){
+   //    $(".previous-link").hide();
+   //  }else{
+   //    //$(prev).clone().appendTo(".previous-link");
+   //    $(".previous-link > a").attr("href",$(prev).attr("href")).attr("title",$(prev).attr("title"));
+   //    $(".previous-link").show();
+//  }
+//  if($(next).length < 1){
+   //    $(".next-link").hide();
+   //  }else{
+   //    $('.next-link > a').attr("href",$(next).attr("href")).attr("title",$(next).attr("title"));
+   //    $(".next-link").show();
+   //  }
+// }
+//当文章为文件夹的时候 并且内容为空的时候显示文件夹内部文章列表
+if($(".view-box").html() == "" && kn.ismenu == 1){
+$(el).clone().appendTo(".view-box");
+$(".view-box").find(".dd-content").removeClass("folder-open").removeClass("folder-close").css({"background-color":"#fff"});
+}
+// $(".dd-content[class*=folder-]").click(function(){
+//     var obj = $(this);
+//     if(obj.hasClass("folder-open")){
+//         obj.removeClass("folder-open");
+//         obj.addClass("folder-close");
+//         obj.next().hide();
+//     }else{
+//         obj.removeClass("folder-close");
+//         obj.addClass("folder-open");
+//         obj.next().show();
+//     }
+// });
+});
+
+
+function getviewkn(){
+var usernamestr ='';
+$.ajax({
+url:"/my/knowledge/getViewkn?pename="+kn.pename,
+dataType:"json",
+success:function(msg){
+var objli,objtt;
+for(var p in msg){
+objli = $("#nestable_handbook").find(".dd-item[data-id='"+msg[p]['kename']+"']");
+if(objli.attr("ismenu") != 1){
+objli.addClass("readed").find("a").attr("title","上次浏览时间:("+msg[p]['lasttime']+")");
+}
+}
+}
+}); 
+
+}
+
+// 新|旧版预览 切换
+function newversion(){
+
+var isNewVersion = $.cookie("newversion");
+if(isNewVersion == 1){
+$.cookie("newversion",0,{path:'/'});
+}else{
+$.cookie("newversion",1,{path:'/'});
+}
+
+window.location.reload();
+
+}
+
+function islike(){
+$.ajaxdo({
+url: "/project/islikeKn",
+type: "post",
+dataType: 'json',
+data: {"pename":'',"kename": ''},
+sync: false,
+success: function (data) {
+if (data.statusCode == 200) {
+$('.avatar-list').find('p').remove();
+$('.avatar-list').append('<a href="/u/' + data.data + '" title="' + data.data + '"><img src="/attachments/avatar/avatar_' + data.data + '.jpg" title=""></a>');
+var likecount = $("#likecount").text() * 1 + 1;
+$("#likecount").html(likecount);
+$(".btn-thumbs-up i").attr('class','thumbs-up-icon-isdone');
+$("#likestatus").html('已赞');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+
+function isstar(){
+var type = $('#hbstar').attr('data-type');
+$.ajaxdo({
+url: "/project/tempStar",
+type: "post",
+dataType: 'json',
+data: {
+kename:'',
+pename:'',
+ktype:'',
+},
+success: function (data) {
+if(data.statusCode == 200){
+if (type == 'star') {
+$('#hbstar').html('<i class="star-icon-isdone"></i><span>已收藏</span>');
+$('#hbstar').attr('data-type','rstar');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+$('#hbstar').html('<i class="star-icon"></i><span>收藏</span>');
+$('#hbstar').attr('data-type','star');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+}
+}else{
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+</body></html>

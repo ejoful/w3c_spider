@@ -155,15 +155,26 @@ class W3cschoolSpider(scrapy.Spider):
         # "http://www.w3cschool.cn/xujunzhou/",
         # "http://www.w3cschool.cn/lvxin/",
 
-
-        "http://www.w3cschool.cn/opensnscourse/",
+        # "http://localhost/test/opensnscourse/opensnscourse.html",
+        # "http://www.w3cschool.cn/opensnscourse/",
         # "http://www.w3cschool.cn/seafile/",
-        # "http://www.w3cschool.cn/ohsce/",
+        # "http://localhost/test/seafile/seafile.html",
         # "http://www.w3cschool.cn/thinkphp323",
+        # "http://localhost/test/thinkphp323/thinkphp323.html",
         # "http://www.w3cschool.cn/hprose_php/",
-        # "http://www.w3cschool.cn/phalapi/",
-        # "http://www.w3cschool.cn/tinyform/tinyform-home.html",
+        # "http://localhost/test/hprose_php/hprose_php.html",
         # "http://www.w3cschool.cn/idea_framework/",
+        # "http://localhost/test/idea_framework/idea_framework.html",
+        # "http://www.w3cschool.cn/phalapi/",
+        # "http://localhost/test/phalapi/phalapi.html",
+
+
+        # "http://www.w3cschool.cn/ohsce/",
+
+
+
+        # "http://www.w3cschool.cn/tinyform/tinyform-home.html",
+
         # "http://www.w3cschool.cn/wex5/",
         # "http://tp://www.bootcss.com",
     ]
@@ -181,6 +192,7 @@ class W3cschoolSpider(scrapy.Spider):
         w3c_item['category'] = 'opensource'
 
         w3c_item['slug'] = url_arr[-2]
+
         w3c_item['name'] = response.xpath('//div[@class="coverinfo"]/h1/text()')[0].extract()
         w3c_item['description'] = response.xpath('//div[@class="coverinfo-desc"]/p/text()')[0].extract()
         img_path_str = response.xpath('//img[@class="pimgcover"]/@src')[0].extract()
@@ -234,7 +246,7 @@ class W3cschoolSpider(scrapy.Spider):
                 # exit()
                 if li_str.xpath('div/h2[@class="menu-title"]/span/@title'):
                     title = li_str.xpath('div/h2[@class="menu-title"]/span/@title')[0].extract()
-                else :
+                else:
                     title = li_str.xpath('div/h2[@class="menu-title"]/a/@title')[0].extract()
                 doc_link_arr.append({'tutorial': w3c_item['slug'],
                                      'is_menu': 1,
@@ -251,7 +263,7 @@ class W3cschoolSpider(scrapy.Spider):
                 for doc_li in menu_doc_li[0:]:
                     index = index + 1
                     doc_slug = doc_li.xpath('@data-id')[0].extract()
-                    # print(doc_slug)
+                    print(doc_slug)
                     if doc_slug == '1k8t1tbq':
                         break
                     doc_name = doc_li.xpath('div[@class="dd-content "]/a/@title')[0].extract()

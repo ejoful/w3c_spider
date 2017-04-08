@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://www.w3cschool.cn/thinkphp323/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>ThinkPHP3.2.3完全开发手册_w3cschool</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="keywords" content="ThinkPHP3.2.3完全开发手册"> 
+<meta name="description" content="ThinkPHP3.2.3完全开发手册_来自ThinkPHP3.2.3完全开发手册，w3cschool。">
+<link rel="stylesheet" href="./thinkphp323_files/w3.css">
+<link rel="stylesheet" href="./thinkphp323_files/project.css">
+<link rel="shortcut icon" href="http://www.w3cschool.cn/statics/images/favicon.ico">
+<link href="./thinkphp323_files/default.css" rel="stylesheet" type="text/css">
+<script src="./thinkphp323_files/push.js.下载"></script><script src="./thinkphp323_files/hm.js.下载"></script><script src="./thinkphp323_files/highlight.pack.js.下载" type="text/javascript"></script>
+<script src="./thinkphp323_files/jquery.min.js.下载" type="text/javascript"></script>
+<script src="./thinkphp323_files/jquery.cookie.min.js.下载" type="text/javascript"></script>
+<script src="./thinkphp323_files/share.js.下载"></script><link rel="stylesheet" href="./thinkphp323_files/share_style2_16.css"><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body id="homefirst"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./thinkphp323_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+<!--引入头部-->
+<!--header start--> 
+<div id="header_item">
+<div id="header_index">
+<div id="header-l">
+<a href="http://www.w3cschool.cn/" title="w3cschool" class="logo"><img src="./thinkphp323_files/header-logo.png" alt="W3Cschool"></a>
+<ul class="header-menu">
+<li><a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">编程入门教程</a></li>
+<li><a href="http://www.w3cschool.cn/manual" title="开源文档">开源文档</a></li>
+<li><a href="http://www.w3cschool.cn/examples" title="编程实例">编程实例</a></li>
+<li><a href="http://www.w3cschool.cn/dict/" title="速查词典">速查词典</a></li>
+<li><a href="http://www.w3cschool.cn/exam/" title="编程题库">题库</a></li>
+<li class="dropdown"><a href="http://www.w3cschool.cn/thinkphp323/#" class="dropbtn">更多 <i class="down-icon1 angle-down-icon"></i></a>
+<div class="dropdown-content">
+<a href="http://www.w3cschool.cn/codecamp/" title="编程实战训练">编程实战训练</a>
+<a href="http://www.w3cschool.cn/question/" title="编程问答">编程问答</a>
+<a href="http://www.w3cschool.cn/codedemo" title="代码实例">代码实例</a>
+<a href="http://www.w3cschool.cn/position/positionlist" title="职位进阶">职位进阶</a>
+<a href="http://www.w3cschool.cn/popularuser" title="排行榜">排行榜</a>
+</div> 
+</li>
+</ul>
+</div>
+<div id="header-r">
+<div class="searchbox">
+<form action="http://www.w3cschool.cn/search" target="_self">
+<input type="text" name="w" class="box" id="searched_content" placeholder="输入关键字搜索...">
+<button type="submit" class="button"></button>
+</form>
+</div>
+<div class="sig-box"><div><a href="http://www.w3cschool.cn/register?refer=/thinkphp323" class="login-bg">注册</a> | <a href="http://www.w3cschool.cn/login?refer=/thinkphp323">登录</a></div></div>
+</div>
+</div>
+</div>
+<div id="navfirst_item">
+<div id="navfirst">
+<ul id="menu">
+<li><a href="http://www.w3cschool.cn/" title="w3cschool首页"><i class="home-icon img-icon"></i>首页</a></li>
+<li><a href="http://www.w3cschool.cn/html/" title="HTML教程">HTML</a></li>
+<li><a href="http://www.w3cschool.cn/css/" title="CSS教程">CSS</a></li>
+<li><a href="http://www.w3cschool.cn/javascript/" title="Javascript教程">Javascript</a></li>
+<li><a href="http://www.w3cschool.cn/jquery/" title="Jquery教程">Jquery</a></li>
+<li><a href="http://www.w3cschool.cn/bootstrap/" title="Bootstrap教程">Bootstrap</a></li>
+<li><a href="http://www.w3cschool.cn/php/" title="PHP教程">PHP</a></li>
+<li><a href="http://www.w3cschool.cn/java/" title="Java教程">Java</a></li>
+<li><a href="http://www.w3cschool.cn/python/" title="Python教程">Python</a></li>
+<li><a href="http://www.w3cschool.cn/mysql/" title="MySQL教程">MySQL</a></li>
+<li><a href="http://www.w3cschool.cn/sql/" title="SQL教程">SQL</a></li>
+<li><a href="http://www.w3cschool.cn/json/" title="JSON教程">Json</a></li>
+<!--<li><a href="//www.w3cschool.cn/c/" title="C教程">C</a></li>-->
+<li><a href="http://www.w3cschool.cn/weixinapp/" title="微信小程序开发文档">微信小程序</a></li>
+<li><a href="http://123.w3cschool.cn/webtools" target="_blank" title="W3Cschool在线工具集合">在线工具</a></li>
+<li><a href="http://123.w3cschool.cn/" target="_blank" title="W3Cschool极客导航">极客导航</a></li>
+<!--<li><a href="//www.w3cschool.cn/position/positionList" title="职业路线">职业路线</a></li>-->
+<li><a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">更多...</a></li>
+</ul>
+</div>
+</div>
+<script>
+var apppath = '/thinkphp323';
+var domain  = '//www.w3cschool.cn';
+</script>
+<!--header end-->
+ 
+<div id="wrapper" class="project-wrapper">
+<div id="navsecond">
+<div id="course">
+<h2>目录</h2>
+</div> 
+<div class="sidebar-content">
+<div class="sidebar-tree">
+<div class="sidebar-tree-content">
+<div class="dd" id="nestable_handbook" data-tid="" data-id="handbook">
+<ol class="dd-list" style="margin: 10px 6px;padding: 0;">
+<li class="dd-item  " data-id="5gzwkcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/5gzwkcqm.html" title="基础">基础</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="1o6jxozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/1o6jxozt.html" title="获取ThinkPHP">获取ThinkPHP</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="nbyu7ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/nbyu7ozt.html" title="ThinkPHP环境要求">ThinkPHP环境要求</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="g2q7vozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/g2q7vozt.html" title="ThinkPHP目录结构">ThinkPHP目录结构</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="n3hvdozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/n3hvdozt.html" title="ThinkPHP入口文件">ThinkPHP入口文件</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="gl14qozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/gl14qozt.html" title="自动生成">自动生成</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="n6rihozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/n6rihozt.html" title="ThinkPHP模块">ThinkPHP模块</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="gkfavozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/gkfavozt.html" title="ThinkPHP控制器">ThinkPHP控制器</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="6j8ivozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/6j8ivozt.html" title="ThinkPHP开发规范">ThinkPHP开发规范</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="cyqfzcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/cyqfzcqm.html" title="配置">配置</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="zq643ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/zq643ozt.html" title="配置格式">配置格式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="h5zp3ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/h5zp3ozt.html" title="配置加载">配置加载</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="n1v2uozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/n1v2uozt.html" title="读取配置">读取配置</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="w62ptozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/w62ptozt.html" title="动态配置">动态配置</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="uhwrbozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/uhwrbozt.html" title="扩展配置">扩展配置</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="gzpxfozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/gzpxfozt.html" title="批量配置">批量配置</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="db42ycqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="架构">
+架构</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="s9huqozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/s9huqozt.html" title="模块化设计">模块化设计</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="yokpaozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/yokpaozt.html" title="URL模式">URL模式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="vn681ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/vn681ozt.html" title="多层MVC">多层MVC</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="h5apiozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/h5apiozt.html" title="CBD模式">CBD模式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="cdqn9ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/cdqn9ozt.html" title="命名空间">命名空间</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="f71uiozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/f71uiozt.html" title="自动加载">自动加载</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="jzdg2ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/jzdg2ozt.html" title="应用模式">应用模式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="f67yiozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/f67yiozt.html" title="项目编译">项目编译</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="v26cyozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/v26cyozt.html" title="系统流程">系统流程</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="pkytmcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/pkytmcqm.html" title="路由">路由</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="usqzlozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/usqzlozt.html" title="路由定义">路由定义</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="dj5inozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/dj5inozt.html" title="规则路由">规则路由</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="aex9gozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/aex9gozt.html" title="正则路由">正则路由</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4dthxozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/4dthxozt.html" title="静态路由">静态路由</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="cmt8wozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/cmt8wozt.html" title="闭包支持">闭包支持</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hf3ayozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/hf3ayozt.html" title="实例说明">实例说明</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="m6uqrcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="控制器">
+控制器</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="epfqbozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/epfqbozt.html" title="控制器定义">控制器定义</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="b54anozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/b54anozt.html" title="前置和后置操作">前置和后置操作</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="rtwlzozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/rtwlzozt.html" title="Action参数绑定">Action参数绑定</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="r146uozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/r146uozt.html" title="伪静态">伪静态</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="821bpozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/821bpozt.html" title="URL大小写">URL大小写</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="6cd7gozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/6cd7gozt.html" title="URL生成">URL生成</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="3mgkvozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/3mgkvozt.html" title="AJAX返回">AJAX返回</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="rnjshozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/rnjshozt.html" title="跳转和重定向">跳转和重定向</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ofsm3ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ofsm3ozt.html" title="输入变量">输入变量</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="o493pozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/o493pozt.html" title="请求类型">请求类型</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="yvzihozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/yvzihozt.html" title="空操作">空操作</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="m7185ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/m7185ozt.html" title="空控制器">空控制器</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="kh2alozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/kh2alozt.html" title="插件控制器">插件控制器</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="8vxybozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/8vxybozt.html" title="操作绑定到类">操作绑定到类</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="q8f7gcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/q8f7gcqm.html" title="模型">模型</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="dasv2ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/dasv2ozt.html" title="模型定义">模型定义</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="iu2y7ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/iu2y7ozt.html" title="模型实例化">模型实例化</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="gpd59ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/gpd59ozt.html" title="字段定义">字段定义</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="jqvw3ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/jqvw3ozt.html" title="连接数据库">连接数据库</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bpl6dozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/bpl6dozt.html" title="切换数据库">切换数据库</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="utnqgozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/utnqgozt.html" title="分布式数据库支持">分布式数据库支持</a>
+</div>
+</li> 
+
+<li class="dd-item  " data-id="oyw41ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/oyw41ozt.html" title="命名范围">命名范围</a>
+</div>
+</li> 
+
+<li class="dd-item  " data-id="bjk1fozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/bjk1fozt.html" title="ActiveRecord">ActiveRecord</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ri289ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ri289ozt.html" title="字段映射">字段映射</a>
+</div>
+</li> 
+
+<li class="dd-item  " data-id="l2b3pozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/l2b3pozt.html" title="自动验证">自动验证</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bh3trozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/bh3trozt.html" title="自动完成">自动完成</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ksmtoozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ksmtoozt.html" title="参数绑定">参数绑定</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="lqjhdozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/lqjhdozt.html" title="虚拟模型">虚拟模型</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="cvm5jozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/cvm5jozt.html" title="模型分层">模型分层</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="vit7uozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/vit7uozt.html" title="视图模型">视图模型</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="sfa4tozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/sfa4tozt.html" title="关联模型">关联模型</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="a3sinozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/a3sinozt.html" title="高级模型">高级模型</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hgx19ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/hgx19ozt.html" title="Mongo模型">Mongo模型</a>
+</div>
+</li> 
+ 
+</ol></li>  
+
+<li class="dd-item  " data-id="bs71ncqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/bs71ncqm.html" title="连贯操作">连贯操作</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="qkomeozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/qkomeozt.html" title="WHERE">WHERE</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="yvhdmozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/yvhdmozt.html" title="TABLE">TABLE</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="bkda7ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/bkda7ozt.html" title="ALIAS">ALIAS</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="odvl6ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/odvl6ozt.html" title="DATA">DATA</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="9gnqsozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/9gnqsozt.html" title="FIELD">FIELD</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="zmal8ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/zmal8ozt.html" title="ORDER">ORDER</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ga6exozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ga6exozt.html" title="LIMIT">LIMIT</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="5malpozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/5malpozt.html" title="PAGE">PAGE</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="2ejhuozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/2ejhuozt.html" title="GROUP">GROUP</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="9wof7ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/9wof7ozt.html" title="HAVING">HAVING</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="digl7ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/digl7ozt.html" title="JOIN">JOIN</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4wpt8ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/4wpt8ozt.html" title="UNION">UNION</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="xotp2ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/xotp2ozt.html" title="DISTINCT">DISTINCT</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="djp2aozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/djp2aozt.html" title="LOCK">LOCK</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="eu41mozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/eu41mozt.html" title="CACHE">CACHE</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="eic6hozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/eic6hozt.html" title="COMMENT">COMMENT</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="v7hs5ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/v7hs5ozt.html" title="RELATION">RELATION</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="lftv9ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/lftv9ozt.html" title="USING">USING</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="cvyzeozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/cvyzeozt.html" title="fetchSql">fetchSql</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="brh5eozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/brh5eozt.html" title="TOKEN">TOKEN</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="tej4zozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/tej4zozt.html" title="STRICT">STRICT</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="q43v9ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/q43v9ozt.html" title="INDEX">INDEX</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="uyt27cqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/uyt27cqm.html" title="CURD操作">CURD操作</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="nep6zozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/nep6zozt.html" title="数据创建">数据创建</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="u4kzyozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/u4kzyozt.html" title="数据写入">数据写入</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="wykzrozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/wykzrozt.html" title="数据读取">数据读取</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="eavxpozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/eavxpozt.html" title="数据更新">数据更新</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ry5p1ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ry5p1ozt.html" title="数据删除">数据删除</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="9ext3cqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="查询语言">
+查询语言</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="xbn2hozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/xbn2hozt.html" title="查询方式">查询方式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ih9otozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ih9otozt.html" title="表达式查询">表达式查询</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="xca2rozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/xca2rozt.html" title="快捷查询">快捷查询</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="rj7l6ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/rj7l6ozt.html" title="区间查询">区间查询</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="iuk7tozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/iuk7tozt.html" title="组合查询">组合查询</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="miyqdozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/miyqdozt.html" title="统计查询">统计查询</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="6k75gozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/6k75gozt.html" title="SQL查询">SQL查询</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="9dmxuozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/9dmxuozt.html" title="动态查询">动态查询</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="29bmgozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/29bmgozt.html" title="子查询">子查询</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="3olv1cqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/3olv1cqm.html" title="视图">视图</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="jv6byozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/jv6byozt.html" title="模板定义">模板定义</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ic8lqozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ic8lqozt.html" title="模板主题">模板主题</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="z5r7gozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/z5r7gozt.html" title="模板赋值">模板赋值</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="z3k2pozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/z3k2pozt.html" title="模板渲染">模板渲染</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="wygdsozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/wygdsozt.html" title="获取模板地址">获取模板地址</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="jadfsozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/jadfsozt.html" title="获取内容">获取内容</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hzbklozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/hzbklozt.html" title="模板引擎">模板引擎</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="nk8q2cqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/nk8q2cqm.html" title="模板">模板</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="jkcnlozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/jkcnlozt.html" title="变量输出">变量输出</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ar1uwozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ar1uwozt.html" title="系统变量">系统变量</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="qincxozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/qincxozt.html" title="使用函数">使用函数</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="3bx26ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/3bx26ozt.html" title="默认值输出">默认值输出</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="u9ajpozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/u9ajpozt.html" title="使用运算符">使用运算符</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="qywjaozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/qywjaozt.html" title="标签库">标签库</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="k6chfozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/k6chfozt.html" title="模板继承">模板继承</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="clfd6ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/clfd6ozt.html" title="修改定界符">修改定界符</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="d94j2ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/d94j2ozt.html" title="三元运算">三元运算</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="beiljozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/beiljozt.html" title="包含文件">包含文件</a>
+</div>
+</li> 
+
+<li class="dd-item  " data-id="i7qczozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/i7qczozt.html" title="原样输出">原样输出</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="38avmozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/38avmozt.html" title="模板注释">模板注释</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="vhjk6ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/vhjk6ozt.html" title="模板布局">模板布局</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="jl174ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/jl174ozt.html" title="模板替换">模板替换</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="bwcivcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/bwcivcqm.html" title="内置标签">内置标签</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="htwilozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/htwilozt.html" title="比较标签">比较标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="h5vloozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/h5vloozt.html" title="范围判断标签">范围判断标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4ok15ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/4ok15ozt.html" title="IF标签">IF标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hjdinozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/hjdinozt.html" title="Present标签">Present标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="7px94ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/7px94ozt.html" title="Empty标签">Empty标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="af12tozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/af12tozt.html" title="Defined标签">Defined标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="rvf4sozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/rvf4sozt.html" title="Volist标签">Volist标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="tqjslozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/tqjslozt.html" title="Assign标签">Assign标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="g6wjvozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/g6wjvozt.html" title="Foreach标签">Foreach标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="a1i5zozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/a1i5zozt.html" title="Define标签">Define标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="kvce6ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/kvce6ozt.html" title="For标签">For标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="o5gdaozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/o5gdaozt.html" title="标签嵌套">标签嵌套</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="nw4pbozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/nw4pbozt.html" title="Switch标签">Switch标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="knuf2ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/knuf2ozt.html" title="import标签">import标签</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="k86luozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/k86luozt.html" title="使用PHP代码">使用PHP代码</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="54ji3cqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/54ji3cqm.html" title="调试">调试</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="a9s35ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/a9s35ozt.html" title="调试模式">调试模式</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="qv3bsozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/qv3bsozt.html" title="异常处理">异常处理</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="c8wljozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/c8wljozt.html" title="日志记录">日志记录</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hkqxwozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/hkqxwozt.html" title="页面Trace">页面Trace</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="1lyxcozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/1lyxcozt.html" title="Trace方法">Trace方法</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ogvs9ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ogvs9ozt.html" title="变量调试">变量调试</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="edasqozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/edasqozt.html" title="性能调试">性能调试</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="z9ljhozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/z9ljhozt.html" title="错误调试">错误调试</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="qx6mfozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/qx6mfozt.html" title="模型调试">模型调试</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="w82y9cqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/w82y9cqm.html" title="缓存">缓存</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="lgfavozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/lgfavozt.html" title="数据缓存">数据缓存</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="mdu5gozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/mdu5gozt.html" title="快速缓存">快速缓存</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="ub1gyozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ub1gyozt.html" title="查询缓存">查询缓存</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="fuwb10vq">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/fuwb10vq.html" title="SQL解析缓存">SQL解析缓存</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="aitdvozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/aitdvozt.html" title="静态缓存">静态缓存</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="p3cmqcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/p3cmqcqm.html" title="安全">安全</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="4i72oozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/4i72oozt.html" title="输入过滤">输入过滤</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hstyaozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/hstyaozt.html" title="表单合法性检测">表单合法性检测</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="6e3pbozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/6e3pbozt.html" title="表单令牌">表单令牌</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4xphmozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/4xphmozt.html" title="防止SQL注入">防止SQL注入</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="e4xorozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/e4xorozt.html" title="目录安全文件">目录安全文件</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="e7zulozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/e7zulozt.html" title="保护模板文件">保护模板文件</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="fn69cozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/fn69cozt.html" title="上传安全">上传安全</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="wsxf9ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/wsxf9ozt.html" title="防止XSS攻击">防止XSS攻击</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="1hswgozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/1hswgozt.html" title="其他安全建议">其他安全建议</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="4e8cjcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/4e8cjcqm.html" title="扩展">扩展</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="ped4vozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/ped4vozt.html" title="类库扩展">类库扩展</a>
+</div>
+</li> 
+
+<li class="dd-item  " data-id="j8o6rozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/j8o6rozt.html" title="行为扩展">行为扩展</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="pilv4ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/pilv4ozt.html" title="标签扩展">标签扩展</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="nlexhozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/nlexhozt.html" title="Widget扩展">Widget扩展</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="mjv9aozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/mjv9aozt.html" title="应用模式">应用模式</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="d5htqcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/d5htqcqm.html" title="驱动扩展">驱动扩展</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="vp28cozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/vp28cozt.html" title="缓存驱动">缓存驱动</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="mnz91ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/mnz91ozt.html" title="数据库驱动">数据库驱动</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="vho9qozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/vho9qozt.html" title="日志驱动">日志驱动</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="6rkzuozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/6rkzuozt.html" title="Session驱动">Session驱动</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="7d1t3ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/7d1t3ozt.html" title="存储驱动">存储驱动</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="7dt3xozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/7dt3xozt.html" title="模板引擎驱动">模板引擎驱动</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="68hx4ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/68hx4ozt.html" title="标签库驱动">标签库驱动</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="76uebcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/76uebcqm.html" title="部署">部署</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="dha1rozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/dha1rozt.html" title="PATH_INFO支持">PATH_INFO支持</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4jz72ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/4jz72ozt.html" title="URL重写">URL重写</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="asdq7ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/asdq7ozt.html" title="模块部署">模块部署</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="3xm2lozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/3xm2lozt.html" title="域名部署">域名部署</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="2wbp3ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/2wbp3ozt.html" title="入口绑定">入口绑定</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="h97o2ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/h97o2ozt.html" title="替换入口">替换入口</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="j35imcqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/j35imcqm.html" title="专题">专题</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="57ar6ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/57ar6ozt.html" title="SESSION支持">SESSION支持</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="6l2dsozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/6l2dsozt.html" title="Cookie支持">Cookie支持</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="89wmkozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/89wmkozt.html" title="多语言支持">多语言支持</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="jfw7bozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/jfw7bozt.html" title="数据分页">数据分页</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="2dc9iozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/2dc9iozt.html" title="文件上传">文件上传</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="2r5bfozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/2r5bfozt.html" title="验证码">验证码</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="2a5zsozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/2a5zsozt.html" title="图像处理">图像处理</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="i4vx9ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/i4vx9ozt.html" title="RESTFul">RESTFul</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="8qljhozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/8qljhozt.html" title="RPC">RPC</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="sg65eozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/sg65eozt.html" title="SAE">SAE</a>
+</div>
+</li> 
+
+<li class="dd-item  " data-id="23g7cozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/23g7cozt.html" title="IP获取和定位">IP获取和定位</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="fibk10vx" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="微信SDK">
+微信SDK</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="vcpekb-wechat">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/vcpekb-wechat.html" title="Wechat">Wechat</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="24bc5cqm" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><a href="http://www.w3cschool.cn/thinkphp323/24bc5cqm.html" title="附录">附录</a>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="k5uf1ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/k5uf1ozt.html" title="常量参考">常量参考</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="gydifozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/gydifozt.html" title="配置参考">配置参考</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="er1x5ozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/er1x5ozt.html" title="升级指导">升级指导</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="trgiaozt">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/thinkphp323/trgiaozt.html" title="鸣谢">鸣谢</a>
+</div>
+</li> 
+ 
+</ol></li>  
+</ol>
+</div>  
+</div>
+</div>
+</div>
+</div>
+<div id="pro-mian" class="main-container">
+<div class="project-cover">
+<div id="pcover">
+<div class="portlet">
+<div class="coverimg">
+<a href="http://www.w3cschool.cn/thinkphp323" title="ThinkPHP3.2.3完全开发手册">                
+<img class="pimgcover" src="./thinkphp323_files/cover_thinkphp323.png" width="150" height="150" alt="ThinkPHP3.2.3完全开发手册">
+</a>
+</div>
+<div class="coverinfo">
+<h1>ThinkPHP3.2.3完全开发手册</h1>
+<div class="coverinfo-desc">
+<h2>手册简介:</h2>
+<p>ThinkPHP3.2.3完全开发手册</p>
+<div class="content-group">
+<span id="content-head-viewcount"><i class="viewcount-icon"></i><span>阅读(8296)</span></span>
+<a id="hbstar" href="javascript:;" onclick="isProjectStar()" data-type="star"><i class="star-icon"></i><span>收藏</span></a>
+<a class="btn-thumbs-up" href="javascript:;" onclick="isProjectLike()"><i class="thumbs-up-icon"></i><span id="likestatus">赞</span>(<span id="likecount">146</span>)</a>
+<a href="javascript:;" title="分享" class="share-km-a btn btn-sm popup_more bdsharebuttonbox bdshare-button-style2-16" data-cmd="more" data-bd-bind="1491295739481"><i class="share-icon"></i><span>分享</span></a>
+<a id="newversion" href="javascript:;" onclick="newversion()"><i class="newversion-icon"></i><span>新版预览</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="project-desc2">
+<h3><i class="icon-reorder"></i>更新记录：</h3>
+<ul class="portlet-body">
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/6j8ivozt.html" title="ThinkPHP开发规范"><i class="icons-img icons-artile"></i>ThinkPHP开发规范</a>
+<span class="logtime">12-18 02:05</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/s9huqozt.html" title="模块化设计"><i class="icons-img icons-artile"></i>模块化设计</a>
+<span class="logtime">11-26 11:41</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/n3hvdozt.html" title="ThinkPHP入口文件"><i class="icons-img icons-artile"></i>ThinkPHP入口文件</a>
+<span class="logtime">08-07 12:56</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/gkfavozt.html" title="ThinkPHP控制器"><i class="icons-img icons-artile"></i>ThinkPHP控制器</a>
+<span class="logtime">08-07 12:55</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/n6rihozt.html" title="ThinkPHP模块"><i class="icons-img icons-artile"></i>ThinkPHP模块</a>
+<span class="logtime">08-07 12:55</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/g2q7vozt.html" title="ThinkPHP目录结构"><i class="icons-img icons-artile"></i>ThinkPHP目录结构</a>
+<span class="logtime">08-07 12:55</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/nbyu7ozt.html" title="ThinkPHP环境要求"><i class="icons-img icons-artile"></i>ThinkPHP环境要求</a>
+<span class="logtime">08-07 12:54</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/vcpekb-wechat.html" title="Wechat"><i class="icons-img icons-artile"></i>Wechat</a>
+<span class="logtime">08-04 20:04</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/fuwb10vq.html" title="SQL解析缓存"><i class="icons-img icons-artile"></i>SQL解析缓存</a>
+<span class="logtime">08-04 19:43</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="http://www.w3cschool.cn/thinkphp323/trgiaozt.html" title="鸣谢"><i class="icons-img icons-artile"></i>鸣谢</a>
+<span class="logtime">02-24 16:16</span>
+</div>
+</li>
+</ul>
+</div>
+</div> 
+<script type="text/javascript">
+function isProjectLike(){
+$.ajaxdo({
+url: "/project/islike/thinkphp323.html",
+type: "post",
+dataType: 'json',
+data: {},
+sync: false,
+success: function (data) {
+if (data.statusCode == 200) {
+$('.avatar-list').find('p').remove();
+$('.avatar-list').append('<a href="/u/' + data.data + '" title="' + data.data + '"><img src="/attachments/avatar/avatar_' + data.data + '.jpg" title=""></a>');
+var likecount = $("#likecount").text() * 1 + 1;
+$("#likecount").html(likecount);
+$(".btn-thumbs-up i").attr('class','thumbs-up-icon-isdone');
+$("#likestatus").html('已赞');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+
+function isProjectStar(){
+var type = $('#hbstar').attr('data-type');
+$.ajaxdo({
+url: "/project/star/thinkphp323.html",
+type: "post",
+dataType: 'json',
+data: {},
+success: function (data) {
+if(data.statusCode == 200){
+if (type == 'star') {
+$('#hbstar').html('<i class="star-icon-isdone"></i><span>已收藏</span>');
+$('#hbstar').attr('data-type','rstar');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+$('#hbstar').html('<i class="star-icon"></i><span>收藏</span>');
+$('#hbstar').attr('data-type','star');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+}
+}else{
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+</script>
+</div>
+</div>
+<div id="sidebar">
+<div class="tools-box">
+<div id="course">
+<h2>扩展栏目</h2>
+</div>
+<div id="tools">
+<h5 id="tools_1"><a href="http://www.w3cschool.cn/webide">开发工具IDE</a></h5>         
+<h5 id="tools_3"><a href="http://www.w3cschool.cn/codecamp/">编程训练营</a></h5>
+</div>
+</div>
+<!--广告放置-->
+<!--内容页竖版广告开始--> 
+<div class="sidebar-box">
+<div id="course">
+<h2>Advertisement</h2>
+</div>
+<div class="abox">
+<script type="text/javascript">
+/*内容页竖版*/
+var cpro_id = "u2914578";
+</script>
+<script src="./thinkphp323_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u2914578_0"><iframe id="iframeu2914578_0" src="./thinkphp323_files/yczm.html" width="160" height="600" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:160px;height:600px" allowtransparency="true"></iframe></div>
+</div>
+</div>
+<!--内容页竖版广告结束--> 
+<!--分类导航-->
+<!--siderbar_nav start--> 
+<div class="sidebar-box">
+<div id="course">
+<h2>分类导航</h2>
+</div>
+<ul class="nav1">
+<li class="li1">
+<a href="javascript:;">最新推荐</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/freejquery/index.html" title="免费Jquery插件合集">免费Jquery插件合集</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/plk2fi/index.html" title="前端学习资源汇总">前端学习资源汇总</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wxxcx/index.html" title="微信小程序资源汇总">微信小程序资源汇总</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/smarty/index.html" title="Smarty教程">Smarty教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/kfm2f1/index.html" title="SEO基础知识教程">SEO基础知识教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wkspring/index.html" title="Spring 教程">Spring 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">HTML/CSS</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/html/index.html" title="HTML教程">HTML教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/html5/index.html" title="HTML5教程">HTML5教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/css/index.html" title="CSS教程">CSS教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/css3/index.html" title="CSS3教程">CSS3教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/bootstrap/index.html" title="bootstrap教程">bootstrap教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/foundation/index.html" title="Foundation5 教程">Foundation5 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">javascript</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/javascript/index.html" title="javascript教程">javascript教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/htmldom/index.html" title="HTML DOM教程">HTML DOM教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jquery/index.html" title="jQuery教程">jQuery教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/angularjs/index.html" title="AngularJS教程">AngularJS教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/react/index.html" title="React 教程">React 教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jqueryui/index.html" title="jQuery UI教程">jQuery UI教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jqueryeasyui/index.html" title="jQuery EasyUI教程">jQuery EasyUI教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/nodejs/index.html" title="Node.js教程">Node.js教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ajax/index.html" title="AJAX教程">AJAX教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/json/index.html" title="JSON教程">JSON教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/highcharts/index.html" title="Highcharts教程">Highcharts教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/googleditu/index.html" title="Google地图教程">Google地图教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">服务端</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/php/index.html" title="PHP教程">PHP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/python/index.html" title="python基础教程">python基础教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/python3/index.html" title="Python 3教程">Python 3教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/django/index.html" title="Django教程">Django教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/linux/index.html" title="Linux教程">Linux教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/docker/index.html" title="Docker教程">Docker教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ruby/index.html" title="Ruby教程">Ruby教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/java/index.html" title="Java教程">Java教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/c/index.html" title="C教程">C教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/cpp/index.html" title="C++教程">C++教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/perl/index.html" title="Perl 教程">Perl 教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/servlet/index.html" title="Servlet教程">Servlet教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jsp/index.html" title="JSP教程">JSP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/lua/index.html" title="Lua教程">Lua教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/scala/index.html" title="scala教程">scala教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/go/index.html" title="Go教程">Go教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/shejimoshi/index.html" title="设计模式">设计模式</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/zhengzebiaodashi/index.html" title="正则表达式">正则表达式</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/asp/index.html" title="ASP教程">ASP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/appml/index.html" title="AppML教程">AppML教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/vbscript/index.html" title="VBScript教程">VBScript教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wkspring/index.html" title="Spring 教程">Spring 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">数据库</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/sql/index.html" title="SQL教程">SQL教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/mysql/index.html" title="MySQL教程">MySQL教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/sqlite/index.html" title="SQLite教程">SQLite教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/mongodb/index.html" title="MongoDB教程">MongoDB教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/redis/index.html" title="Redis教程">Redis教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/memcached/index.html" title="Memcached教程">Memcached教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">移动端</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/android/index.html" title="Android教程">Android教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/swift/index.html" title="Swift 教程">Swift 教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/jquerymobile/index.html" title="jQuery Mobile教程">jQuery Mobile教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ionic/index.html" title="ionic">ionic</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/ios/index.html" title="ios开发手册">ios开发手册</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">ASP.NET</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/aspnet/index.html" title="ASP.NET教程">ASP.NET教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/csharp/index.html" title="C#教程">C#教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">Web Services</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/webservices/index.html" title="Web Services教程">Web Services教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/wsdl/index.html" title="WSDL教程">WSDL教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/soap/index.html" title="SOAP教程">SOAP教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/rss/index.html" title="RSS教程">RSS教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/rdf/index.html" title="RDF教程">RDF教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">开发工具</a>
+<ul class="nav2">
+<li class="li2"><a href="http://www.w3cschool.cn/eclipse/index.html" title="Eclipse教程">Eclipse教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/git/index.html" title="Git教程">Git教程</a></li>
+<li class="li2"><a href="http://www.w3cschool.cn/firebug/index.html" title="Firebug教程">Firebug教程</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!--siderbar_nav end--></div>
+</div>
+<!--footer start-->
+<div id="footer_item">
+<div id="footer">
+<div class="footer-box">
+<div class="footer-title">网站相关</div>
+<div class="footer-items">
+<a href="http://www.w3cschool.cn/about/about.html">关于我们</a>
+<a href="http://www.w3cschool.cn/about/join.html">加入我们</a>
+<a href="http://www.w3cschool.cn/about/disclaimer.html">免责声明</a>
+<a href="http://www.w3cschool.cn/sitemap/">网站地图</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">内容专区</div>
+<div class="footer-items">
+<a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">编程入门教程</a>
+<a href="http://www.w3cschool.cn/manual" title="技术文档参考手册">开源文档</a>
+<a href="http://www.w3cschool.cn/examples" title="在线实例">在线实例</a>
+<a href="http://www.w3cschool.cn/archives/" title="文章存档">文章存档</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">常用链接</div>
+<div class="footer-items">
+<a href="http://www.w3cschool.cn/tif2eq/index.html" target="_blank" title="使用帮助">使用帮助</a>
+<a href="http://123.w3cschool.cn/" title="技术学习极客导航">极客导航</a>
+<a href="http://wiki.w3cschool.cn/" target="_blank" title="编程百科">编程百科</a>
+<a href="http://m.w3cschool.cn/" target="_blank" title="w3cschool手机版">w3cschool手机版</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">联系我们</div>
+<div class="footer-items">
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=d308d977f1e630212a6c5412057c1784314d5ce64a287e02b4e7eabeb28b1f0d" ref="nofollow">官方QQ群：496712525</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3265790599&amp;site=qq&amp;menu=yes" ref="nofollow">商务合作QQ：3265790599</a>
+<a target="_blank" href="http://www.w3cschool.cn/links" title="友情链接">友情链接QQ：3532917531</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="tcode"><img src="./thinkphp323_files/w3cschool.png" alt="微信订阅号" width="100" height="100"></div>
+<p class="tcode-txt">微信号：w3cschoolcn</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>Copyright©2016 亿动科技 <a href="http://www.w3cschool.cn/" title="w3cschool">w3cschool.cn </a> All Rights Reserved. 闽ICP备15016281号-3</p>
+</div>
+</div>
+<div class="bottom-tools" style="bottom: 40px;">
+<a id="scrollUp" href="javascript:;" title="飞回顶部" style="display: block;"></a>
+<a class="onlinenote" style="" title="在线笔记" href="javascript:;" data-module="page">在线笔记</a>
+<div class="qr-tool">二维码</div>
+<a id="feedback" class="webjy" title="建议反馈" href="javascript:;" data-module="page" onclick="showDialogBox(this)">建议反馈</a>
+<div class="qr-img" style="display: none;"><img src="./thinkphp323_files/qrapi" alt="二维码"></div>
+</div>
+
+<div class="feedback-Box" style="display: none;">
+<div class="feedback-Box-content" style="width: 800px;">
+<div class="feedback-Box-top">
+<span class="feedback-Box-title">意见反馈</span>
+<span onclick="closeDialogBox(this)" class="feedback-Box-close">X</span>
+</div>
+<ul>
+<li class="feedback-box">
+<div id="feedbackRadio" type="radio" name="feedbackType" data-value="0" style=""> 意见反馈：</div>
+<textarea name="reportInfo" id="elmaaa" class="feedback-text" rows="15" placeholder="请留下您宝贵的意见反馈吧。" style="width: 700px;height:200px;overflow:auto;"></textarea>
+<p>联系方式：</p>
+<input type="text" placeholder="留个联系方式呗..." name="reportAddress" class="radio-text" id="reportAddress" style="height: 30px;width: 200px;">
+</li>
+</ul>
+<button class="search-s" onclick="dialogSubmit(this)" id="reportSubmit">提交</button>
+</div>
+</div>
+
+<div id="note-start" style="display: none"></div>
+
+<div id="detail" style="display:none;">
+<div id="note-Dialog" class="note-Dialog">
+
+<div class="note-Box-content">
+<div class="ntitlebox">
+<input type="text" placeholder="" name="ntitle" class="ntitle" id="ntitle">
+</div>
+<div id="editorarea">
+<textarea name="ncontent" id="ncontent" class="ncontent" rows="15" placeholder="" style="width: 700px;height:200px;overflow:auto;"></textarea>
+</div>
+<p></p>
+<a class="closenote" href="http://www.w3cschool.cn/my/note" target="_blank">查看完整版笔记</a>
+<button class="notesubmit" id="notesubmit">保存</button>
+<button class="notebtn pull-right closenote" style="margin:20px 0">关闭</button>
+</div>
+</div>
+</div>
+<!--footer end-->
+<div class="widget-body" data-type="project"><div class="widget-main" style=""><div class="widget-box"><div class="slogn">Hi，看起来你挺喜欢这些内容，但是你还没有注册帐号！当你创建了帐号，你可以收藏感兴趣的内容，并记录你的阅读状态！</div><div class="quicklogin quick-box"><a href="http://www.w3cschool.cn/register?refer=/thinkphp323">立即注册</a></div><div class="sig-group"><a href="http://www.w3cschool.cn/login?refer=/thinkphp323">已有账号，登录</a></div></div><a class="widget-box-close" href="javascript:;" title="关闭">X</a></div></div>
+<script src="./thinkphp323_files/shCore.js.下载" type="text/javascript"></script>
+<script src="./thinkphp323_files/commonfooter.js.下载" type="text/javascript"></script><span style="display:none;" id="cnzz_stat_icon_1259964532"><a href="http://www.cnzz.com/stat/website.php?web_id=1259964532" target="_blank" title="站长统计">站长统计</a></span><script src="./thinkphp323_files/z_stat.php" type="text/javascript"></script><script src="./thinkphp323_files/core.php" charset="utf-8" type="text/javascript"></script>
+<script src="./thinkphp323_files/ajaxdo.core.js.下载" type="text/javascript"></script>
+<script>
+var kn = {
+ismenu:'',
+pename:'thinkphp323',
+kename:'',
+};
+$(function(){
+
+$(".onlinenote").show();
+
+var kename = kn.kename;
+var fid    = "";
+var uid = '0';
+// SyntaxHighlighter.config.clipboardSwf = '/plugins/ueditor/third-party/zeroclipboard/ZeroClipboard.swf';
+// SyntaxHighlighter.all();//代码高亮
+/*开启计时 准备记录积分*/
+var vcreditfull = $.cookie('ypre_vcreditfull');
+//console.log(vcreditfull);
+if(vcreditfull == undefined && uid != '0' && uid != ''){
+setTimeout(function(){
+$.ajax({
+url:"/project/setViewCredit",
+type:"post",
+data:{kename:kename},
+dataType:"json",
+success:function(msg){
+var statusCode = {
+'200':'success',
+'400':'warning',
+};
+var toastrType = statusCode[msg.statusCode];
+if(msg.statusCode == 300 || msg.statusCode == 400){
+return;
+}
+toastr[toastrType](msg.message);
+}
+});
+},30000);
+}
+hljs.initHighlightingOnLoad();//高亮代码
+// // 上一篇 下一篇
+// if(fid == "-1"){
+// $(".prenext").parent().remove();
+// }else{
+var el = $(".dd-item[data-id="+kename+"]");
+// var prevel = el.prev();
+// var nextel = el.next();
+   //  var prev = prevel.find('a')[0];
+   //  var next = nextel.find('a')[0];
+//  if(prev == undefined){
+   //     prev = el.parents(".dd-list").prev().find('a')[0];
+   //  }
+   //  if(next == undefined){
+   //     next = el.parents(".dd-item").next().find('a')[0];
+   //  }
+//  if(prevel.attr("ismenu") == 1){
+   //  prev = prevel.find
+   //  }
+//  if($(prev).length < 1){
+   //    $(".previous-link").hide();
+   //  }else{
+   //    //$(prev).clone().appendTo(".previous-link");
+   //    $(".previous-link > a").attr("href",$(prev).attr("href")).attr("title",$(prev).attr("title"));
+   //    $(".previous-link").show();
+//  }
+//  if($(next).length < 1){
+   //    $(".next-link").hide();
+   //  }else{
+   //    $('.next-link > a').attr("href",$(next).attr("href")).attr("title",$(next).attr("title"));
+   //    $(".next-link").show();
+   //  }
+// }
+//当文章为文件夹的时候 并且内容为空的时候显示文件夹内部文章列表
+if($(".view-box").html() == "" && kn.ismenu == 1){
+$(el).clone().appendTo(".view-box");
+$(".view-box").find(".dd-content").removeClass("folder-open").removeClass("folder-close").css({"background-color":"#fff"});
+}
+// $(".dd-content[class*=folder-]").click(function(){
+//     var obj = $(this);
+//     if(obj.hasClass("folder-open")){
+//         obj.removeClass("folder-open");
+//         obj.addClass("folder-close");
+//         obj.next().hide();
+//     }else{
+//         obj.removeClass("folder-close");
+//         obj.addClass("folder-open");
+//         obj.next().show();
+//     }
+// });
+});
+
+
+function getviewkn(){
+var usernamestr ='';
+$.ajax({
+url:"/my/knowledge/getViewkn?pename="+kn.pename,
+dataType:"json",
+success:function(msg){
+var objli,objtt;
+for(var p in msg){
+objli = $("#nestable_handbook").find(".dd-item[data-id='"+msg[p]['kename']+"']");
+if(objli.attr("ismenu") != 1){
+objli.addClass("readed").find("a").attr("title","上次浏览时间:("+msg[p]['lasttime']+")");
+}
+}
+}
+}); 
+
+}
+
+// 新|旧版预览 切换
+function newversion(){
+
+var isNewVersion = $.cookie("newversion");
+if(isNewVersion == 1){
+$.cookie("newversion",0,{path:'/'});
+}else{
+$.cookie("newversion",1,{path:'/'});
+}
+
+window.location.reload();
+
+}
+
+function islike(){
+$.ajaxdo({
+url: "/project/islikeKn",
+type: "post",
+dataType: 'json',
+data: {"pename":'',"kename": ''},
+sync: false,
+success: function (data) {
+if (data.statusCode == 200) {
+$('.avatar-list').find('p').remove();
+$('.avatar-list').append('<a href="/u/' + data.data + '" title="' + data.data + '"><img src="/attachments/avatar/avatar_' + data.data + '.jpg" title=""></a>');
+var likecount = $("#likecount").text() * 1 + 1;
+$("#likecount").html(likecount);
+$(".btn-thumbs-up i").attr('class','thumbs-up-icon-isdone');
+$("#likestatus").html('已赞');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+
+function isstar(){
+var type = $('#hbstar').attr('data-type');
+$.ajaxdo({
+url: "/project/tempStar",
+type: "post",
+dataType: 'json',
+data: {
+kename:'',
+pename:'',
+ktype:'',
+},
+success: function (data) {
+if(data.statusCode == 200){
+if (type == 'star') {
+$('#hbstar').html('<i class="star-icon-isdone"></i><span>已收藏</span>');
+$('#hbstar').attr('data-type','rstar');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+$('#hbstar').html('<i class="star-icon"></i><span>收藏</span>');
+$('#hbstar').attr('data-type','star');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+}
+}else{
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+</body></html>

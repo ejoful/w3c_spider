@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.w3cschool.cn/opensnscourse/lc3f1pnt.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>OpenSNS部署_w3cschool</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="keywords" content="OpenSNS部署"> 
+<meta name="description" content="OpenSNS部署_来自OpenSNS建站教程，w3cschool。">
+<link rel="stylesheet" href="./opensnscourse_files/w3.css">
+<link rel="stylesheet" href="./opensnscourse_files/project.css">
+<link rel="shortcut icon" href="http://www.w3cschool.cn/statics/images/favicon.ico">
+<link href="./opensnscourse_files/default.css" rel="stylesheet" type="text/css">
+<script src="./opensnscourse_files/push.js.下载"></script><script src="./opensnscourse_files/hm.js.下载"></script><script src="./opensnscourse_files/highlight.pack.js.下载" type="text/javascript"></script>
+<script src="./opensnscourse_files/jquery.min.js.下载" type="text/javascript"></script>
+<script src="./opensnscourse_files/jquery.cookie.min.js.下载" type="text/javascript"></script>
+<script src="./opensnscourse_files/share.js.下载"></script><link rel="stylesheet" href="./opensnscourse_files/share_style2_16.css"><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body id="homefirst"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./opensnscourse_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+<!--引入头部-->
+<!--header start--> 
+<div id="header_item">
+<div id="header_index">
+<div id="header-l">
+<a href="http://www.w3cschool.cn/" title="w3cschool" class="logo"><img src="./opensnscourse_files/header-logo.png" alt="W3Cschool"></a>
+<ul class="header-menu">
+<li><a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">编程入门教程</a></li>
+<li><a href="http://www.w3cschool.cn/manual" title="开源文档">开源文档</a></li>
+<li><a href="http://www.w3cschool.cn/examples" title="编程实例">编程实例</a></li>
+<li><a href="http://www.w3cschool.cn/dict/" title="速查词典">速查词典</a></li>
+<li><a href="http://www.w3cschool.cn/exam/" title="编程题库">题库</a></li>
+<li class="dropdown"><a href="http://www.w3cschool.cn/opensnscourse/lc3f1pnt.html#" class="dropbtn">更多 <i class="down-icon1 angle-down-icon"></i></a>
+<div class="dropdown-content">
+<a href="http://www.w3cschool.cn/codecamp/" title="编程实战训练">编程实战训练</a>
+<a href="http://www.w3cschool.cn/question/" title="编程问答">编程问答</a>
+<a href="http://www.w3cschool.cn/codedemo" title="代码实例">代码实例</a>
+<a href="http://www.w3cschool.cn/position/positionlist" title="职位进阶">职位进阶</a>
+<a href="http://www.w3cschool.cn/popularuser" title="排行榜">排行榜</a>
+</div> 
+</li>
+</ul>
+</div>
+<div id="header-r">
+<div class="searchbox">
+<form action="http://www.w3cschool.cn/search" target="_self">
+<input type="text" name="w" class="box" id="searched_content" placeholder="输入关键字搜索...">
+<button type="submit" class="button"></button>
+</form>
+</div>
+<div class="sig-box"><div><a href="http://www.w3cschool.cn/register?refer=/opensnscourse/lc3f1pnt.html" class="login-bg">注册</a> | <a href="http://www.w3cschool.cn/login?refer=/opensnscourse/lc3f1pnt.html">登录</a></div></div>
+</div>
+</div>
+</div>
+<div id="navfirst_item">
+<div id="navfirst">
+<ul id="menu">
+<li><a href="http://www.w3cschool.cn/" title="w3cschool首页"><i class="home-icon img-icon"></i>首页</a></li>
+<li><a href="http://www.w3cschool.cn/html/" title="HTML教程">HTML</a></li>
+<li><a href="http://www.w3cschool.cn/css/" title="CSS教程">CSS</a></li>
+<li><a href="http://www.w3cschool.cn/javascript/" title="Javascript教程">Javascript</a></li>
+<li><a href="http://www.w3cschool.cn/jquery/" title="Jquery教程">Jquery</a></li>
+<li><a href="http://www.w3cschool.cn/bootstrap/" title="Bootstrap教程">Bootstrap</a></li>
+<li><a href="http://www.w3cschool.cn/php/" title="PHP教程">PHP</a></li>
+<li><a href="http://www.w3cschool.cn/java/" title="Java教程">Java</a></li>
+<li><a href="http://www.w3cschool.cn/python/" title="Python教程">Python</a></li>
+<li><a href="http://www.w3cschool.cn/mysql/" title="MySQL教程">MySQL</a></li>
+<li><a href="http://www.w3cschool.cn/sql/" title="SQL教程">SQL</a></li>
+<li><a href="http://www.w3cschool.cn/json/" title="JSON教程">Json</a></li>
+<!--<li><a href="//www.w3cschool.cn/c/" title="C教程">C</a></li>-->
+<li><a href="http://www.w3cschool.cn/weixinapp/" title="微信小程序开发文档">微信小程序</a></li>
+<li><a href="http://123.w3cschool.cn/webtools" target="_blank" title="W3Cschool在线工具集合">在线工具</a></li>
+<li><a href="http://123.w3cschool.cn/" target="_blank" title="W3Cschool极客导航">极客导航</a></li>
+<!--<li><a href="//www.w3cschool.cn/position/positionList" title="职业路线">职业路线</a></li>-->
+<li><a href="http://www.w3cschool.cn/tutorial" title="编程入门教程">更多...</a></li>
+</ul>
+</div>
+</div>
+<script>
+var apppath = '/opensnscourse/lc3f1pnt.html';
+var domain  = '//www.w3cschool.cn';
+</script>
+<!--header end-->
+ 
+<div id="wrapper" class="project-wrapper">
+<div id="navsecond">
+<div id="course">
+<h2>目录</h2>
+</div> 
+<div class="sidebar-content">
+<div class="sidebar-tree">
+<div class="sidebar-tree-content">
+<div class="dd" id="nestable_handbook" data-tid="79913" data-id="handbook">
+<ol class="dd-list" style="margin: 10px 6px;padding: 0;">
+<li class="dd-item  " data-id="lc3f1pnt" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS部署">
+OpenSNS部署</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="b3if1pnu">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/b3if1pnu.html" title="OpenSNS注意事项">OpenSNS注意事项</a>
+</div>
+</li> 
+</ol></li>
+<li class="dd-item  " data-id="lrmc1pnv" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS网站建站">
+OpenSNS网站建站</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="laxp1pnw">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/laxp1pnw.html" title="Windows环境搭建网站">Windows环境搭建网站</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="sboz1pny">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/sboz1pny.html" title="Linux环境搭建网站">Linux环境搭建网站</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="wb3t1pnz">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/wb3t1pnz.html" title="OpenSNS升级教程">OpenSNS升级教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="rt9f1po0">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/rt9f1po0.html" title="OpenSNS网站搬家教程">OpenSNS网站搬家教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="q5yr1po1">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/q5yr1po1.html" title="OpenSNS在云市场安装功能扩展">OpenSNS在云市场安装功能扩展</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="gwxm1po5">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/gwxm1po5.html" title="OpenSNSV1与V2版的数据迁移">OpenSNSV1与V2版的数据迁移</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="pi7k1po6">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/pi7k1po6.html" title="OpenSNS2.2.0之前安装的模块检测不到更新？">OpenSNS2.2.0之前安装的模块检测不到更新？</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="7umc1po8" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS系统配置">
+OpenSNS系统配置</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+ 
+  
+<li class="dd-item  " data-id="u5211po9">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/u5211po9.html" title="OpenSNS伪静态配置教程">OpenSNS伪静态配置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="klvo1poa">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/klvo1poa.html" title="Ucenter通信教程">Ucenter通信教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="4dmg1pob">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/4dmg1pob.html" title="修改管理后台地址">修改管理后台地址</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="s1921poc">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/s1921poc.html" title="修改最大上传限制">修改最大上传限制</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="y71v1pod">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/y71v1pod.html" title="单点登陆—基于OC的程序互通账号">单点登陆—基于OC的程序互通账号</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="w1al1poe">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/w1al1poe.html" title="SEO规则配置教程">SEO规则配置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="1ltq1pof">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/1ltq1pof.html" title="如何设置超级管理员？">如何设置超级管理员？</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="7wyz1pog">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/7wyz1pog.html" title="如何上传表情包">如何上传表情包</a>
+</div>
+</li> 
+ 
+</ol></li>
+
+
+<li class="dd-item  " data-id="t1b81poh" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS主程序">
+OpenSNS主程序</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="dacq1poi">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/dacq1poi.html" title="网站主页展示设置">网站主页展示设置</a>
+</div>
+</li> 
+</ol></li>  
+<li class="dd-item  " data-id="7ag61poj" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="用户管理教程">
+用户管理教程</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+ 
+  
+<li class="dd-item  " data-id="znov1pok">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/znov1pok.html" title="OpenSNS用户注册配置教程">OpenSNS用户注册配置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="fp5k1pol">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/fp5k1pol.html" title="OpenSNS权限设置教程">OpenSNS权限设置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="wnxe1pom">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/wnxe1pom.html" title="OpenSNS头衔管理教程">OpenSNS头衔管理教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="18uw1pon">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/18uw1pon.html" title="OpenSNS积分规则设置教程">OpenSNS积分规则设置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="8otk1poo">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/8otk1poo.html" title="OpenSNS用户等级设置">OpenSNS用户等级设置</a>
+</div>
+</li> 
+ 
+</ol></li>
+<li class="dd-item  " data-id="nx9z1poq" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS商业模块">
+OpenSNS商业模块</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+ 
+  
+<li class="dd-item  " data-id="tqax1por">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/tqax1por.html" title="OpenSNS微信公众号">OpenSNS微信公众号</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="wsyq1pos">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/wsyq1pos.html" title="OpenSNS问答">OpenSNS问答</a>
+</div>
+</li> 
+ 
+</ol></li>
+
+
+<li class="dd-item  " data-id="kyip1pot" ismenu="1">
+
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS云存储配置教程">
+OpenSNS云存储配置教程</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="euks1ppj">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/euks1ppj.html" title="七牛云存储配置教程">七牛云存储配置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="3xf41ppk">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/3xf41ppk.html" title="OSS云存储配置教程">OSS云存储配置教程</a>
+</div>
+</li> 
+ 
+
+<li class="dd-item  " data-id="nf671ppl">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/nf671ppl.html" title="OpenSNS-短信配置教程">OpenSNS-短信配置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="k9a61ppm">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/k9a61ppm.html" title="OpenSNS-邮件注册配置教程">OpenSNS-邮件注册配置教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="uzg11ppn">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/uzg11ppn.html" title="OpenSNS-新增广告位教程">OpenSNS-新增广告位教程</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="w7iv1ppo">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/w7iv1ppo.html" title="OpenSNS-友情链接配置教程">OpenSNS-友情链接配置教程</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="hxsj1pou" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS同步登陆配置教程">
+OpenSNS同步登陆配置教程</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="r7bs1pov">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/r7bs1pov.html" title="OpenSNS-QQ同步登陆">OpenSNS-QQ同步登陆</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="onsb1pow">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/onsb1pow.html" title="OpenSNS-新浪同步登陆">OpenSNS-新浪同步登陆</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="hra61pph">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/hra61pph.html" title="OpenSNS-微信同步登陆">OpenSNS-微信同步登陆</a>
+</div>
+</li> 
+ 
+</ol></li>  
+<li class="dd-item  " data-id="un8d1ppp" ismenu="1">
+<div class="dd-content folder-open">
+<h2 class="menu-title"><span class="leftth" title="OpenSNS运营">
+OpenSNS运营</span>
+</h2></div>
+<ol class="dd-list" style="margin: 0;padding: 0;">
+<li class="dd-item  " data-id="zw961ppq">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/zw961ppq.html" title="OpenSNS-身份全解">OpenSNS-身份全解</a>
+</div>
+</li> 
+<li class="dd-item  " data-id="eyzg1ppr">
+<div class="dd-content ">
+<a href="http://www.w3cschool.cn/opensnscourse/eyzg1ppr.html" title="OpenSNS-邀请注册">OpenSNS-邀请注册</a>
+</div>
+</li> 
+ 
+</ol></li>  
+</ol>
+</div>  
+</div>
+</div>
+</div>
+</div>
+<div id="pro-mian" class="main-container">
+<div class="project-cover">
+<div id="pcover" >
+<div class="portlet">
+<div class="coverimg">
+<a href="//www.w3cschool.cn/opensnscourse" title="OpenSNS建站教程">                
+<img class="pimgcover" src="/attachments/cover/cover_opensnscourse.jpeg" width="150" height="150" alt="OpenSNS建站教程"/>
+</a>
+</div>
+<div class="coverinfo">
+<h1>OpenSNS建站教程</h1>
+<div class="coverinfo-desc">
+<h2>手册简介:</h2>
+<p>OpenSNS是基于OneThink的轻量级社交化用户中心框架,系统秉持简约的设计风格,注重交流,为用户提供了一套轻量级的社交方案。</p>
+<div class="content-group">
+<span id="content-head-viewcount"><i class="viewcount-icon"></i><span>阅读(205)</span></span>
+<a id="hbstar" href="javascript:;" onclick="isProjectStar()" data-type="star"><i class="star-icon"></i><span>收藏</span></a>
+<a class="btn-thumbs-up" href="javascript:;" onclick="isProjectLike()"><i class="thumbs-up-icon"></i><span id="likestatus">赞</span>(<span id="likecount">500</span>)</a>
+<a href="javascript:;" title="分享" class="share-km-a btn btn-sm popup_more bdsharebuttonbox bdshare-button-style2-16" data-cmd="more" data-bd-bind="1472196006351"><i class="share-icon"></i><span>分享</span></a>
+<a id="newversion" href="javascript:;" onclick="newversion()"><i class="newversion-icon"></i><span>新版预览</span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="project-desc2">
+<h3><i class="icon-reorder"></i>更新记录：</h3>
+<ul class="portlet-body">
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/sboz1pny.html" title="Linux环境搭建网站"><i class="icons-img icons-artile"></i>Linux环境搭建网站</a>
+<span class="logtime">08-19 18:36</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/laxp1pnw.html" title="Windows环境搭建网站"><i class="icons-img icons-artile"></i>Windows环境搭建网站</a>
+<span class="logtime">08-19 18:34</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/b3if1pnu.html" title="OpenSNS注意事项"><i class="icons-img icons-artile"></i>OpenSNS注意事项</a>
+<span class="logtime">08-19 18:31</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/uzg11ppn.html" title="OpenSNS-新增广告位教程"><i class="icons-img icons-artile"></i>OpenSNS-新增广告位教程</a>
+<span class="logtime">08-19 18:24</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/zw961ppq.html" title="OpenSNS-身份全解"><i class="icons-img icons-artile"></i>OpenSNS-身份全解</a>
+<span class="logtime">08-19 18:22</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/eyzg1ppr.html" title="OpenSNS-邀请注册"><i class="icons-img icons-artile"></i>OpenSNS-邀请注册</a>
+<span class="logtime">08-19 18:17</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/w7iv1ppo.html" title="OpenSNS-友情链接配置教程"><i class="icons-img icons-artile"></i>OpenSNS-友情链接配置教程</a>
+<span class="logtime">08-19 18:04</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/k9a61ppm.html" title="OpenSNS-邮件注册配置教程"><i class="icons-img icons-artile"></i>OpenSNS-邮件注册配置教程</a>
+<span class="logtime">08-19 17:59</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/nf671ppl.html" title="OpenSNS-短信配置教程"><i class="icons-img icons-artile"></i>OpenSNS-短信配置教程</a>
+<span class="logtime">08-19 17:56</span>
+</div>
+</li>
+<li class="logrow">
+<div class="loginfo">
+<a href="/opensnscourse/3xf41ppk.html" title="OSS云存储配置教程"><i class="icons-img icons-artile"></i>OSS云存储配置教程</a>
+<span class="logtime">08-19 17:54</span>
+</div>
+</li>
+</ul>
+</div>
+</div> 
+<script type="text/javascript">
+function isProjectLike(){
+$.ajaxdo({
+url: "/project/islike/opensnscourse.html",
+type: "post",
+dataType: 'json',
+data: {},
+sync: false,
+success: function (data) {
+if (data.statusCode == 200) {
+$('.avatar-list').find('p').remove();
+$('.avatar-list').append('<a href="/u/' + data.data + '" title="' + data.data + '"><img src="/attachments/avatar/avatar_' + data.data + '.jpg" title=""></a>');
+var likecount = $("#likecount").text() * 1 + 1;
+$("#likecount").html(likecount);
+$(".btn-thumbs-up i").attr('class','thumbs-up-icon-isdone');
+$("#likestatus").html('已赞');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+
+function isProjectStar(){
+var type = $('#hbstar').attr('data-type');
+$.ajaxdo({
+url: "/project/star/opensnscourse.html",
+type: "post",
+dataType: 'json',
+data: {},
+success: function (data) {
+if(data.statusCode == 200){
+if (type == 'star') {
+$('#hbstar').html('<i class="star-icon-isdone"></i><span>已收藏</span>');
+$('#hbstar').attr('data-type','rstar');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+$('#hbstar').html('<i class="star-icon"></i><span>收藏</span>');
+$('#hbstar').attr('data-type','star');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+}
+}else{
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+</script>
+</div>
+</div>
+<div id="sidebar">
+<div class="tools-box">
+<div id="course">
+<h2>扩展栏目</h2>
+</div>
+<div id="tools">
+<h5 id="tools_1"><a href="/webide">开发工具IDE</a></h5>         
+<h5 id="tools_3"><a href="/codecamp/">编程训练营</a></h5>
+</div>
+</div>
+<!--广告放置-->
+<!--内容页竖版广告开始--> 
+<div class="sidebar-box">
+<div id="course">
+<h2>Advertisement</h2>
+</div>
+<div class="abox">
+<script type="text/javascript">
+/*内容页竖版*/
+var cpro_id = "u2914578";
+</script>
+<script src="//cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+</div>
+<!--内容页竖版广告结束--> 
+<!--分类导航-->
+<!--siderbar_nav start--> 
+<div class="sidebar-box">
+<div id="course">
+<h2>分类导航</h2>
+</div>
+<ul class="nav1">
+<li class="li1">
+<a href="javascript:;">最新推荐</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/freejquery/index.html" title="免费Jquery插件合集">免费Jquery插件合集</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/plk2fi/index.html" title="前端学习资源汇总">前端学习资源汇总</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/wxxcx/index.html" title="微信小程序资源汇总">微信小程序资源汇总</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/smarty/index.html" title="Smarty教程">Smarty教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/kfm2f1/index.html" title="SEO基础知识教程">SEO基础知识教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/wkspring/index.html" title="Spring 教程">Spring 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">HTML/CSS</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/html/index.html" title="HTML教程">HTML教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/html5/index.html" title="HTML5教程">HTML5教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/css/index.html" title="CSS教程">CSS教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/css3/index.html" title="CSS3教程">CSS3教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/bootstrap/index.html" title="bootstrap教程">bootstrap教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/foundation/index.html" title="Foundation5 教程">Foundation5 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">javascript</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/javascript/index.html" title="javascript教程">javascript教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/htmldom/index.html" title="HTML DOM教程">HTML DOM教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/jquery/index.html" title="jQuery教程">jQuery教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/angularjs/index.html" title="AngularJS教程">AngularJS教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/react/index.html" title="React 教程">React 教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/jqueryui/index.html" title="jQuery UI教程">jQuery UI教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/jqueryeasyui/index.html" title="jQuery EasyUI教程">jQuery EasyUI教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/nodejs/index.html" title="Node.js教程">Node.js教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/ajax/index.html" title="AJAX教程">AJAX教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/json/index.html" title="JSON教程">JSON教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/highcharts/index.html" title="Highcharts教程">Highcharts教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/googleditu/index.html" title="Google地图教程">Google地图教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">服务端</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/php/index.html" title="PHP教程">PHP教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/python/index.html" title="python基础教程">python基础教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/python3/index.html" title="Python 3教程">Python 3教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/django/index.html" title="Django教程">Django教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/linux/index.html" title="Linux教程">Linux教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/docker/index.html" title="Docker教程">Docker教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/ruby/index.html" title="Ruby教程">Ruby教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/java/index.html" title="Java教程">Java教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/c/index.html" title="C教程">C教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/cpp/index.html" title="C++教程">C++教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/perl/index.html" title="Perl 教程">Perl 教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/servlet/index.html" title="Servlet教程">Servlet教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/jsp/index.html" title="JSP教程">JSP教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/lua/index.html" title="Lua教程">Lua教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/scala/index.html" title="scala教程">scala教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/go/index.html" title="Go教程">Go教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/shejimoshi/index.html" title="设计模式">设计模式</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/zhengzebiaodashi/index.html" title="正则表达式">正则表达式</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/asp/index.html" title="ASP教程">ASP教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/appml/index.html" title="AppML教程">AppML教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/vbscript/index.html" title="VBScript教程">VBScript教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/wkspring/index.html" title="Spring 教程">Spring 教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">数据库</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/sql/index.html" title="SQL教程">SQL教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/mysql/index.html" title="MySQL教程">MySQL教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/sqlite/index.html" title="SQLite教程">SQLite教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/mongodb/index.html" title="MongoDB教程">MongoDB教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/redis/index.html" title="Redis教程">Redis教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/memcached/index.html" title="Memcached教程">Memcached教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">移动端</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/android/index.html" title="Android教程">Android教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/swift/index.html" title="Swift 教程">Swift 教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/jquerymobile/index.html" title="jQuery Mobile教程">jQuery Mobile教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/ionic/index.html" title="ionic">ionic</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/ios/index.html" title="ios开发手册">ios开发手册</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">ASP.NET</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/aspnet/index.html" title="ASP.NET教程">ASP.NET教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/csharp/index.html" title="C#教程">C#教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">Web Services</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/webservices/index.html" title="Web Services教程">Web Services教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/wsdl/index.html" title="WSDL教程">WSDL教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/soap/index.html" title="SOAP教程">SOAP教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/rss/index.html" title="RSS教程">RSS教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/rdf/index.html" title="RDF教程">RDF教程</a></li>
+</ul>
+</li>
+<li class="li1">
+<a href="javascript:;">开发工具</a>
+<ul class="nav2">
+<li class="li2"><a href="//www.w3cschool.cn/eclipse/index.html" title="Eclipse教程">Eclipse教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/git/index.html" title="Git教程">Git教程</a></li>
+<li class="li2"><a href="//www.w3cschool.cn/firebug/index.html" title="Firebug教程">Firebug教程</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!--siderbar_nav end--></div>
+</div>
+<!--footer start-->
+<div id="footer_item">
+<div id="footer">
+<div class="footer-box">
+<div class="footer-title">网站相关</div>
+<div class="footer-items">
+<a href="//www.w3cschool.cn/about/about.html">关于我们</a>
+<a href="//www.w3cschool.cn/about/join.html">加入我们</a>
+<a href="//www.w3cschool.cn/about/disclaimer.html">免责声明</a>
+<a href="//www.w3cschool.cn/sitemap/">网站地图</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">内容专区</div>
+<div class="footer-items">
+<a href="//www.w3cschool.cn/tutorial" title="编程入门教程">编程入门教程</a>
+<a href="//www.w3cschool.cn/manual" title="技术文档参考手册">开源文档</a>
+<a href="//www.w3cschool.cn/examples" title="在线实例">在线实例</a>
+<a href="//www.w3cschool.cn/archives/" title="文章存档">文章存档</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">常用链接</div>
+<div class="footer-items">
+<a href="//www.w3cschool.cn/tif2eq/index.html" target="_blank" title="使用帮助">使用帮助</a>
+<a href="http://123.w3cschool.cn" title="技术学习极客导航">极客导航</a>
+<a href="//wiki.w3cschool.cn" target="_blank" title="编程百科">编程百科</a>
+<a href="//m.w3cschool.cn/" target="_blank" title="w3cschool手机版">w3cschool手机版</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="footer-title">联系我们</div>
+<div class="footer-items">
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=d308d977f1e630212a6c5412057c1784314d5ce64a287e02b4e7eabeb28b1f0d" ref="nofollow">官方QQ群：496712525</a>
+<a target="_blank" href="//wpa.qq.com/msgrd?v=3&amp;uin=3265790599&amp;site=qq&amp;menu=yes" ref="nofollow">商务合作QQ：3265790599</a>
+<a target="_blank" href="//www.w3cschool.cn/links" title="友情链接">友情链接QQ：3532917531</a>
+</div>
+</div>
+<div class="footer-box">
+<div class="tcode"><img src="//statics.w3cschool.cn/images/w3c/w3cschool.png" alt="微信订阅号" width="100" height="100"></div>
+<p class="tcode-txt">微信号：w3cschoolcn</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>Copyright&copy;2016 亿动科技 <a href="//www.w3cschool.cn" title="w3cschool">w3cschool.cn </a> All Rights Reserved. 闽ICP备15016281号-3</p>
+</div>
+</div>
+<div class="bottom-tools" style="bottom: 40px;">
+<a id="scrollUp" href="javascript:;" title="飞回顶部"></a>
+<a class="onlinenote" style="display: none;" title="在线笔记" href="javascript:;" data-module="page">在线笔记</a>
+<div class="qr-tool">二维码</div>
+<a id="feedback" class="webjy" title="建议反馈" href="javascript:;" data-module="page" onclick="showDialogBox(this)">建议反馈</a>
+<div class="qr-img"><img src="//statics.w3cschool.cn/images/w3c/w3cschool.jpg" alt="二维码"></div>
+</div>
+
+<div class="feedback-Box" style="display: none;">
+<div class="feedback-Box-content" style="width: 800px;">
+<div class="feedback-Box-top">
+<span class="feedback-Box-title">意见反馈</span>
+<span onclick="closeDialogBox(this)" class="feedback-Box-close">X</span>
+</div>
+<ul>
+<li class="feedback-box" >
+<div id="feedbackRadio" type="radio" name="feedbackType" data-value="0" style=""> 意见反馈：</div>
+<textarea  name="reportInfo" id="elmaaa" class="feedback-text" rows="15" placeholder="请留下您宝贵的意见反馈吧。" style="width: 700px;height:200px;overflow:auto;" ></textarea>
+<p>联系方式：</p>
+<input type="text" placeholder="留个联系方式呗..." name="reportAddress" class="radio-text" id="reportAddress" style="height: 30px;width: 200px;">
+</li>
+</ul>
+<button class="search-s" onclick="dialogSubmit(this)" id="reportSubmit">提交</button>
+</div>
+</div>
+
+<div id="note-start" style="display: none"></div>
+
+<div id="detail" style="display:none;">
+<div id="note-Dialog" class="note-Dialog" >
+
+<div class="note-Box-content" >
+<div class="ntitlebox">
+<input type="text" placeholder="" name="ntitle" class="ntitle" id="ntitle" >
+</div>
+<div id="editorarea">
+<textarea  name="ncontent" id="ncontent" class="ncontent" rows="15" placeholder="" style="width: 700px;height:200px;overflow:auto;" ></textarea>
+</div>
+<p></p>
+<a class="closenote" href="/my/note" target="_blank" >查看完整版笔记</a>
+<button class="notesubmit"  id="notesubmit">保存</button>
+<button class="notebtn pull-right closenote" style="margin:20px 0" >关闭</button>
+</div>
+</div>
+</div>
+<!--footer end-->
+<div class="widget-body" data-type="project">
+</div>
+<script src="//www.w3cschool.cn/plugins/ueditor/third-party/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
+<script src="//www.w3cschool.cn/statics/js/commonfooter.js" type="text/javascript"></script>
+<script src="//www.w3cschool.cn/statics/core/ajaxdo.core.js" type="text/javascript"></script>
+<script>
+var kn = {
+ismenu:'',
+pename:'opensnscourse',
+kename:'',
+};
+$(function(){
+
+$(".onlinenote").show();
+
+var kename = kn.kename;
+var fid    = "";
+var uid = '0';
+// SyntaxHighlighter.config.clipboardSwf = '/plugins/ueditor/third-party/zeroclipboard/ZeroClipboard.swf';
+// SyntaxHighlighter.all();//代码高亮
+/*开启计时 准备记录积分*/
+var vcreditfull = $.cookie('ypre_vcreditfull');
+//console.log(vcreditfull);
+if(vcreditfull == undefined && uid != '0' && uid != ''){
+setTimeout(function(){
+$.ajax({
+url:"/project/setViewCredit",
+type:"post",
+data:{kename:kename},
+dataType:"json",
+success:function(msg){
+var statusCode = {
+'200':'success',
+'400':'warning',
+};
+var toastrType = statusCode[msg.statusCode];
+if(msg.statusCode == 300 || msg.statusCode == 400){
+return;
+}
+toastr[toastrType](msg.message);
+}
+});
+},30000);
+}
+hljs.initHighlightingOnLoad();//高亮代码
+// // 上一篇 下一篇
+// if(fid == "-1"){
+// $(".prenext").parent().remove();
+// }else{
+var el = $(".dd-item[data-id="+kename+"]");
+// var prevel = el.prev();
+// var nextel = el.next();
+   //  var prev = prevel.find('a')[0];
+   //  var next = nextel.find('a')[0];
+//  if(prev == undefined){
+   //     prev = el.parents(".dd-list").prev().find('a')[0];
+   //  }
+   //  if(next == undefined){
+   //     next = el.parents(".dd-item").next().find('a')[0];
+   //  }
+//  if(prevel.attr("ismenu") == 1){
+   //  prev = prevel.find
+   //  }
+//  if($(prev).length < 1){
+   //    $(".previous-link").hide();
+   //  }else{
+   //    //$(prev).clone().appendTo(".previous-link");
+   //    $(".previous-link > a").attr("href",$(prev).attr("href")).attr("title",$(prev).attr("title"));
+   //    $(".previous-link").show();
+//  }
+//  if($(next).length < 1){
+   //    $(".next-link").hide();
+   //  }else{
+   //    $('.next-link > a').attr("href",$(next).attr("href")).attr("title",$(next).attr("title"));
+   //    $(".next-link").show();
+   //  }
+// }
+//当文章为文件夹的时候 并且内容为空的时候显示文件夹内部文章列表
+if($(".view-box").html() == "" && kn.ismenu == 1){
+$(el).clone().appendTo(".view-box");
+$(".view-box").find(".dd-content").removeClass("folder-open").removeClass("folder-close").css({"background-color":"#fff"});
+}
+// $(".dd-content[class*=folder-]").click(function(){
+//     var obj = $(this);
+//     if(obj.hasClass("folder-open")){
+//         obj.removeClass("folder-open");
+//         obj.addClass("folder-close");
+//         obj.next().hide();
+//     }else{
+//         obj.removeClass("folder-close");
+//         obj.addClass("folder-open");
+//         obj.next().show();
+//     }
+// });
+});
+
+
+function getviewkn(){
+var usernamestr ='';
+$.ajax({
+url:"/my/knowledge/getViewkn?pename="+kn.pename,
+dataType:"json",
+success:function(msg){
+var objli,objtt;
+for(var p in msg){
+objli = $("#nestable_handbook").find(".dd-item[data-id='"+msg[p]['kename']+"']");
+if(objli.attr("ismenu") != 1){
+objli.addClass("readed").find("a").attr("title","上次浏览时间:("+msg[p]['lasttime']+")");
+}
+}
+}
+}); 
+
+}
+
+// 新|旧版预览 切换
+function newversion(){
+
+var isNewVersion = $.cookie("newversion");
+if(isNewVersion == 1){
+$.cookie("newversion",0,{path:'/'});
+}else{
+$.cookie("newversion",1,{path:'/'});
+}
+
+window.location.reload();
+
+}
+
+function islike(){
+$.ajaxdo({
+url: "/project/islikeKn",
+type: "post",
+dataType: 'json',
+data: {"pename":'',"kename": ''},
+sync: false,
+success: function (data) {
+if (data.statusCode == 200) {
+$('.avatar-list').find('p').remove();
+$('.avatar-list').append('<a href="/u/' + data.data + '" title="' + data.data + '"><img src="/attachments/avatar/avatar_' + data.data + '.jpg" title=""></a>');
+var likecount = $("#likecount").text() * 1 + 1;
+$("#likecount").html(likecount);
+$(".btn-thumbs-up i").attr('class','thumbs-up-icon-isdone');
+$("#likestatus").html('已赞');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+
+function isstar(){
+var type = $('#hbstar').attr('data-type');
+$.ajaxdo({
+url: "/project/tempStar",
+type: "post",
+dataType: 'json',
+data: {
+kename:'',
+pename:'',
+ktype:'',
+},
+success: function (data) {
+if(data.statusCode == 200){
+if (type == 'star') {
+$('#hbstar').html('<i class="star-icon-isdone"></i><span>已收藏</span>');
+$('#hbstar').attr('data-type','rstar');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+} else {
+$('#hbstar').html('<i class="star-icon"></i><span>收藏</span>');
+$('#hbstar').attr('data-type','star');
+toastr.success(data.message,'',{"positionClass": "toast-top-center"});
+}
+}else{
+toastr.warning(data.message,'',{"positionClass": "toast-top-center"});
+}
+}
+});
+}
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</body>
+</html>
